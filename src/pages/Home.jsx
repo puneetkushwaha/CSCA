@@ -1,107 +1,16 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import { Shield, Target, Users, Award, ChevronRight } from 'lucide-react';
+import TrustedBy from '../components/TrustedBy';
+import OurCourses from '../components/OurCourses';
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div className="bg-black min-h-screen">
       <Hero />
-
-      {/* Trusted By Section */}
-      <section className="py-12 border-b border-white/5 bg-black/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-bold text-white/40 uppercase tracking-[0.3em] mb-10">
-            Trusted by professionals from
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-all duration-700">
-            {/* Mock Logos using Styled Text/Icons */}
-            <div className="text-xl md:text-2xl font-black text-white/80 tracking-tighter flex items-center gap-2">
-              <Shield className="h-6 w-6 text-red-500" />
-              <span>NETSEC</span>
-            </div>
-            <div className="text-xl md:text-2xl font-black text-white/80 tracking-tighter flex items-center gap-2">
-              <Target className="h-6 w-6 text-red-500" />
-              <span>CYBERCORE</span>
-            </div>
-            <div className="text-xl md:text-2xl font-black text-white/80 tracking-tighter flex items-center gap-2">
-              <Award className="h-6 w-6 text-red-500" />
-              <span>VANGUARD</span>
-            </div>
-            <div className="text-xl md:text-2xl font-black text-white/80 tracking-tighter flex items-center gap-2">
-              <Users className="h-6 w-6 text-red-500" />
-              <span>DEFENDX</span>
-            </div>
-            <div className="text-xl md:text-2xl font-black text-white/80 tracking-tighter flex items-center gap-2">
-              <Shield className="h-6 w-6 text-red-500" />
-              <span>IRONCLAD</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Heading */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-red-400">
-              Why Choose CSCA?
-            </h2>
-            <p className="text-red-300 max-w-2xl mx-auto">
-              We provide more than just theory. Our certification programs are designed to build real-world combat readiness for cyber defense roles.
-            </p>
-          </div>
-
-          {/* Grid Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Target className="h-8 w-8 text-red-400" />,
-                title: 'Role-Based Training',
-                desc: 'Curriculum designed around specific job roles like SOC Analyst, Penetration Tester, and Incident Responder.'
-              },
-              {
-                icon: <Shield className="h-8 w-8 text-red-400" />,
-                title: 'Red Team Focus',
-                desc: 'Specialized intensive training for defensive security operations, threat hunting, and digital forensics.'
-              },
-              {
-                icon: <Users className="h-8 w-8 text-red-400" />,
-                title: 'Community Driven',
-                desc: 'Join a global network of security professionals. Access exclusive resources, webinars, and mentorship.'
-              }
-            ].map((feature, idx) => (
-              <div
-                key={idx}
-                className="relative p-8 rounded-xl cursor-pointer 
-                     bg-gradient-to-r from-black/70 via-red-950/70 to-black/70
-                     border border-red-900
-                     shadow-lg hover:shadow-red-900/50
-                     transform transition-all duration-300 hover:scale-105
-                     overflow-hidden"
-              >
-                {/* Glowing overlay */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-800/30 via-red-900/50 to-red-800/30
-                          opacity-0 hover:opacity-70 blur-xl transition-opacity duration-300 rounded-xl pointer-events-none"></div>
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-6
-                            bg-red-900/30 hover:bg-red-800/50 transition-colors duration-300 shadow-md hover:shadow-red-900/50">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 transition-colors duration-300 hover:text-red-400">
-                    {feature.title}
-                  </h3>
-                  <p className="text-red-300/80 leading-relaxed transition-colors duration-300 hover:text-red-400">
-                    {feature.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <TrustedBy />
+      <OurCourses />
 
       {/* Featured Certifications */}
       <section className="py-20 bg-black text-white">
@@ -193,8 +102,6 @@ const Home = () => {
         </div>
       </section>
 
-
-
       {/* CTA Section */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-5xl mx-auto px-4 text-center">
@@ -236,7 +143,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

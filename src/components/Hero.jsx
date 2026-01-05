@@ -8,37 +8,44 @@ const Hero = () => {
 
     const certifications = [
         {
+            title: "Blue Team Level 1 (BTL1)",
+            level: "Junior",
+            description: "Our Junior Security Operations training and certification covers Phishing Analysis, Digital Forensics, Threat Intelligence, SIEM, and Incident Response.",
+            icon: <ShieldCheck className="h-10 w-10 text-red-500" />,
+            glow: "from-red-500/20"
+        },
+        {
             title: "Certified Junior Detection Engineer",
             level: "Junior",
-            icon: <ShieldCheck className="h-8 w-8 text-red-500" />,
-            color: "red-500",
-            glow: "from-red-500/20"
+            description: "Master the art of creating high-fidelity detection rules and identifying malicious patterns in enterprise environments.",
+            icon: <Terminal className="h-10 w-10 text-red-400" />,
+            glow: "from-red-600/30"
         },
         {
             title: "Blue Team Level 2 (BTL2)",
             level: "Intermediate",
-            icon: <Terminal className="h-8 w-8 text-red-400" />,
-            color: "red-400",
-            glow: "from-red-600/30"
+            description: "Advanced incident response and threat hunting training for established SOC analysts and security professionals.",
+            icon: <Globe className="h-10 w-10 text-red-600" />,
+            glow: "from-red-400/20"
         },
         {
-            title: "Certified Senior Security Analyst",
-            level: "Advanced",
-            icon: <Globe className="h-8 w-8 text-red-600" />,
-            color: "red-600",
-            glow: "from-red-400/20"
+            title: "Certified Digital Forensics Professional",
+            level: "Professional",
+            description: "Deep-dive into advanced forensic methodologies, memory analysis, and complex investigative techniques.",
+            icon: <ShieldCheck className="h-10 w-10 text-red-700" />,
+            glow: "from-red-800/20"
         }
     ];
 
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % certifications.length);
-        }, 4000);
+        }, 5000);
         return () => clearInterval(interval);
-    }, []);
+    }, [certifications.length]);
 
     return (
-        <div className="relative min-h-[600px] border-b border-red-950 overflow-hidden">
+        <div className="relative min-h-[500px] overflow-hidden">
             {/* Base Background Layer */}
             <div className="absolute inset-0 bg-black -z-20"></div>
 
@@ -46,75 +53,112 @@ const Hero = () => {
 
             {/* Background Gradient & Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a0000_1px,transparent_1px),linear-gradient(to_bottom,#1a0000_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 -z-10"></div>
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-800 to-transparent z-0"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 pb-20 md:pt-20 md:pb-40 overflow-visible">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 pb-20 md:pt-16 md:pb-40 overflow-visible">
                 <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
 
                     {/* Left Content */}
-                    <div className="mb-12 lg:mb-0 flex flex-col items-start">
+                    <div className="mb-13 lg:mb-0 flex flex-col items-start lg:pr-8 md:-mt-10">
                         {/* Top Line */}
-                        <div className="w-full h-0.5 bg-red-600/60 mb-8"></div>
+                        <div className="w-full h-px bg-red-600/40 mb-6"></div>
 
-                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-8 uppercase">
+                        <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold text-white leading-tight tracking-tight mb-6 uppercase">
                             Practical <br />
-                            <span className="text-outline-red block my-1">
+                            <span className="text-outline-red block my-2 leading-[1.1]">
                                 Cybersecurity Training
                             </span>
                             For Every Level.
                         </h1>
 
                         {/* Middle Line */}
-                        <div className="w-full h-0.5 bg-red-600/60 mb-8"></div>
+                        <div className="w-full h-px bg-red-600/40 mb-10"></div>
 
-                        <p className="text-sm md:text-base text-white/60 mb-0 max-w-2xl leading-relaxed uppercase tracking-wider font-medium">
+                        <p className="text-[11px] md:text-sm text-white/70 mb-0 max-w-xl leading-loose uppercase tracking-[0.2em] font-bold">
                             Our practical cyber defense training has developed the skills of thousands of aspiring or established security professionals around the world.
                         </p>
                     </div>
 
-                    {/* Right Content - Shuffling Certification Cards */}
-                    <div className="relative h-[450px] md:h-[500px] flex items-start justify-center lg:justify-end pt-32 lg:pt-48 lg:py-0 overflow-visible">
-                        {/* Background Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-red-900/5 blur-[120px] rounded-full -z-10"></div>
-
-                        <div className="relative w-full max-w-md h-full flex flex-col items-center">
+                    {/* Right Content - Stacking Certification Cards */}
+                    <div className="relative h-[650px] flex items-start justify-center lg:justify-end overflow-visible pt-16 md:pt-24">
+                        <div className="relative w-full max-w-lg h-full mt-4 lg:mt-0">
                             {certifications.map((cert, index) => {
-                                // Calculate position relative to active index
                                 const position = (index - activeIndex + certifications.length) % certifications.length;
 
-                                // Dynamic classes based on position
-                                let classes = "";
+                                // Layout styles based on position (Active at top, others stacked below)
+                                let opacity = 0;
+                                let scale = 1;
+                                let zIndex = 0;
+                                let translateY = 0;
+
                                 if (position === 0) {
-                                    // Active (Front & Large)
-                                    classes = "z-30 opacity-100 scale-110 translate-y-0";
+                                    opacity = 1;
+                                    scale = 1.15; // Prominent size for active
+                                    zIndex = 30;
+                                    translateY = 0;
                                 } else if (position === 1) {
-                                    // Next (Behind & Smaller)
-                                    classes = "z-20 opacity-70 scale-90 translate-y-36 md:translate-y-40";
+                                    opacity = 1;   // Full visibility for back cards
+                                    scale = 0.9;   // Hierarchy restored
+                                    zIndex = 20;
+                                    translateY = 220; // Reduced gap
                                 } else {
-                                    // Back (Furthest & Smallest)
-                                    classes = "z-10 opacity-40 scale-80 translate-y-64 md:translate-y-72";
+                                    opacity = 1;   // Full visibility for back cards
+                                    scale = 0.8;   // Hierarchy restored
+                                    zIndex = 10;
+                                    translateY = 400; // Reduced gap
                                 }
 
                                 return (
                                     <div
                                         key={index}
-                                        className={`absolute w-full transition-all duration-1000 ease-in-out transform ${classes}`}
+                                        className="absolute top-0 right-0 w-full transition-all duration-1000 ease-in-out transform origin-top"
+                                        style={{
+                                            opacity: opacity,
+                                            zIndex: zIndex,
+                                            transform: `scale(${scale}) translateY(${translateY}px)`
+                                        }}
                                     >
                                         <div className="group relative">
-                                            <div className={`absolute -inset-0.5 bg-gradient-to-r ${cert.glow} to-transparent rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000`}></div>
-                                            <div className={`relative bg-black/40 backdrop-blur-xl border-2 border-white/40 p-6 md:p-8 rounded-xl flex items-center justify-between shadow-2xl ring-2 ${position === 0 ? 'ring-red-500/70' : 'ring-red-800/40'}`}>
-                                                <div className="flex items-center gap-5 md:gap-7">
-                                                    <div className={`w-16 h-16 md:w-20 md:h-20 rounded-lg bg-red-950/40 border border-red-800/20 flex items-center justify-center transition-transform duration-700 ${position === 0 ? 'scale-110' : ''}`}>
-                                                        {React.cloneElement(cert.icon, { className: 'h-8 w-8 md:h-10 md:w-10 text-red-500' })}
-                                                    </div>
-                                                    <div>
-                                                        <span className={`inline-block px-2 py-0.5 rounded bg-red-900/40 text-red-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-2`}>{cert.level}</span>
-                                                        <h3 className="text-lg md:text-2xl font-bold text-white uppercase tracking-tighter leading-[1.1]">
-                                                            {cert.title}
-                                                        </h3>
+                                            {/* Glow Effect */}
+                                            <div className={`absolute -inset-1 bg-gradient-to-r ${cert.glow} to-transparent rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000`}></div>
+
+                                            {/* Main Card */}
+                                            <div className={`relative bg-black/60 backdrop-blur-2xl border-2 border-white/20 p-4 md:p-6 rounded-2xl flex flex-col md:flex-row gap-4 md:gap-8 shadow-3xl ring-1 ${position === 0 ? 'ring-red-500/30' : 'ring-white/5'}`}>
+
+                                                {/* Left: Badge Icon */}
+                                                <div className="flex-shrink-0 flex items-center justify-center">
+                                                    <div className={`w-20 h-20 md:w-24 md:h-24 rounded-xl bg-gradient-to-br from-red-950/40 to-black border-2 ${position === 0 ? 'border-red-500/40' : 'border-red-900/20'} flex flex-col items-center justify-center p-3 relative overflow-hidden group-hover:border-red-500/60 transition-colors`}>
+                                                        <div className="absolute inset-0 bg-red-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                                        <div className="text-red-500 mb-1 scale-75 md:scale-100">
+                                                            {cert.icon}
+                                                        </div>
+                                                        <div className="text-[7px] md:text-[8px] font-black uppercase tracking-tighter text-white/40 text-center leading-none">
+                                                            Certified <br /> Security
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <ChevronRight className={`h-6 w-6 md:h-8 md:w-8 transition-colors ${position === 0 ? 'text-red-500' : 'text-red-900'}`} />
+
+                                                {/* Right: Content Area */}
+                                                <div className="flex-grow flex flex-col justify-center relative min-h-[100px]">
+                                                    {/* Top Right Tag */}
+                                                    <div className="absolute top-0 right-0">
+                                                        <span className="px-1.5 py-0.5 rounded bg-white/10 border border-white/10 text-white text-[7px] md:text-[9px] font-black uppercase tracking-widest">
+                                                            {cert.level}
+                                                        </span>
+                                                    </div>
+
+                                                    <h3 className="text-base md:text-lg font-black text-white uppercase tracking-tight mb-2 pr-12 leading-tight">
+                                                        {cert.title}
+                                                    </h3>
+
+                                                    {position === 0 && (
+                                                        <>
+                                                            <p className="text-[10px] md:text-xs text-white/50 leading-relaxed max-w-sm font-medium">
+                                                                {cert.description}
+                                                            </p>
+                                                            <div className="mt-4 w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-transparent"></div>
+                                                        </>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

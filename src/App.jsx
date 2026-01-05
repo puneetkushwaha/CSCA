@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import AnnouncementBar from './components/AnnouncementBar';
 import Footer from './components/Footer';
 
 // Pages
@@ -32,6 +33,7 @@ const ScrollToTop = () => {
 const MainLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <AnnouncementBar />
       <Navbar />
       <div className="flex-grow">
         <Outlet />
