@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Book, Clock, Award, ChevronRight, Search, Shield, Target, Binary, Activity, Sparkles, BookOpen } from 'lucide-react';
+import { Book, Clock, Award, ChevronRight, Search, Shield, Target, Binary, Activity, Sparkles, BookOpen, ArrowRight } from 'lucide-react';
+import RedGeometricBackground from './RedGeometricBackground';
 
 const OurCourses = () => {
     const [activeTab, setActiveTab] = useState('Certifications');
@@ -141,6 +142,18 @@ const OurCourses = () => {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/5 blur-[120px] rounded-full pointer-events-none"></div>
             <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-red-900/5 blur-[100px] rounded-full pointer-events-none animate-pulse"></div>
 
+            <RedGeometricBackground
+                height={35}
+                jaggednessScale={2}
+                opacity={0.3}
+                reverse={true}
+                planeSize={[80, 60]}
+                cameraPos={[0, 5, 25]}
+                meshPos={[0, -15, -10]}
+                ashCount={300}
+                ashSize={0.035}
+            />
+
             {/* Subtle Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
                 style={{ backgroundImage: 'linear-gradient(rgba(220, 38, 38, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(220, 38, 38, 0.2) 1px, transparent 1px)', backgroundSize: '50px 50px' }}>
@@ -274,6 +287,30 @@ const OurCourses = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* Call to Action Buttons - Consistent with Navbar Style */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-20 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000">
+
+                    {/* View All Courses (Register Style) */}
+                    <button className="relative group overflow-hidden">
+                        <div className="px-10 py-3.5 bg-white hover:bg-black rounded-full transition-all duration-200 flex items-center gap-3">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-red-600/20 via-orange-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity blur-xl"></div>
+                            <span className="relative z-10 text-[10px] font-black text-black group-hover:text-white uppercase tracking-[0.25em] transition-colors">View All Courses</span>
+                            <ArrowRight className="h-3 w-3 text-black group-hover:text-red-500 transition-colors group-hover:translate-x-1 duration-300" />
+                        </div>
+                        <div className="absolute inset-0 rounded-full border border-black/5 group-hover:border-red-500/50 transition-colors duration-500"></div>
+                    </button>
+
+                    {/* Corporate Training (Login Style) */}
+                    <button className="relative group px-10 py-3.5 rounded-full border border-white hover:border-red-600/50 transition-all duration-300 overflow-hidden">
+                        <div className="absolute inset-0 bg-white/[0.03] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="relative z-10 flex items-center gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-red-600 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-100 shadow-[0_0_8px_rgba(220,38,38,0.8)]"></div>
+                            <span className="text-[10px] font-black text-white uppercase tracking-[0.25em] transition-all">Corporate Training</span>
+                        </div>
+                    </button>
+
                 </div>
             </div>
         </section>

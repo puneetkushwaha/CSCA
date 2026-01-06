@@ -1,7 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const RedGeometricBackground = () => {
+const RedGeometricBackground = ({
+    height = 5,
+    jaggednessScale = 2.5,
+    opacity = 0.6,
+    reverse = false,
+    planeSize = [35, 20],
+    cameraPos = [0, 2, 8],
+    meshPos = [0, -7, 0],
+    ashCount = 50,
+    ashColor = 0xff6600,
+    ashSize = 0.03
+}) => {
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -16,8 +27,8 @@ const RedGeometricBackground = () => {
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         containerRef.current.appendChild(renderer.domElement);
 
-        // Geometry - Low Poly Plane
-        const geometry = new THREE.PlaneGeometry(35, 20, 30, 30);
+        // Geometry - Low Poly Plane (Customizable via props)
+        const geometry = new THREE.PlaneGeometry(planeSize[0], planeSize[1], 50, 50);
         const positionAttribute = geometry.getAttribute('position');
         const originalPositions = new Float32Array(positionAttribute.array);
 
@@ -25,12 +36,13 @@ const RedGeometricBackground = () => {
         for (let i = 0; i < positionAttribute.count; i++) {
             const x = positionAttribute.getX(i);
 
-            // Normalize X to 0 (left) to 1 (right)
-            const normalizedX = (x + 17.5) / 35;
+            // Normalize X to 0 (left) to 1 (right) based on plane width
+            let normalizedX = (x + planeSize[0] / 2) / planeSize[0];
+            if (reverse) normalizedX = 1 - normalizedX;
 
             // Base height increases towards the right, plus jagged peaks
-            const climbHeight = normalizedX * 5;
-            const jaggedness = Math.random() * 2.5;
+            const climbHeight = normalizedX * height;
+            const jaggedness = Math.random() * jaggednessScale;
 
             positionAttribute.setZ(i, climbHeight + jaggedness);
         }
@@ -41,13 +53,13 @@ const RedGeometricBackground = () => {
         const material = new THREE.MeshPhongMaterial({
             color: 0x660000,
             transparent: true,
-            opacity: 0.6,
+            opacity: opacity,
             flatShading: true,
             side: THREE.DoubleSide
         });
         const mesh = new THREE.Mesh(geometry, material);
-        mesh.rotation.x = -Math.PI / 2.1; // Slightly more upright for better incline view
-        mesh.position.y = -7; // Lowered to show taller peaks on the right
+        mesh.rotation.x = -Math.PI / 2.2;
+        mesh.position.set(meshPos[0], meshPos[1], meshPos[2]);
         scene.add(mesh);
 
         // Wireframe / Edges (The Plexus Look)
@@ -75,24 +87,23 @@ const RedGeometricBackground = () => {
         scene.add(points);
 
         // Subtle Ashes / Sparks System
-        const ashCount = 50;
         const ashGeometry = new THREE.BufferGeometry();
         const ashPositions = new Float32Array(ashCount * 3);
         const ashVelocities = new Float32Array(ashCount);
 
         for (let i = 0; i < ashCount; i++) {
-            ashPositions[i * 3] = (Math.random() - 0.5) * 20; // X
-            ashPositions[i * 3 + 1] = Math.random() * -5; // Y
-            ashPositions[i * 3 + 2] = (Math.random() - 0.5) * 10; // Z
-            ashVelocities[i] = 0.005 + Math.random() * 0.01;
+            ashPositions[i * 3] = (Math.random() - 0.5) * (planeSize[0] * 1.5); // X Spread
+            ashPositions[i * 3 + 1] = (Math.random() - 0.5) * 30; // Random Y position within range
+            ashPositions[i * 3 + 2] = (Math.random() - 0.5) * 15; // Z Spread
+            ashVelocities[i] = 0.01 + Math.random() * 0.03;
         }
 
         ashGeometry.setAttribute('position', new THREE.BufferAttribute(ashPositions, 3));
         const ashMaterial = new THREE.PointsMaterial({
-            color: 0xff6600,
-            size: 0.03,
+            color: ashColor,
+            size: ashSize,
             transparent: true,
-            opacity: 0.4,
+            opacity: 0.6,
             blending: THREE.AdditiveBlending
         });
         const ashes = new THREE.Points(ashGeometry, ashMaterial);
@@ -106,8 +117,7 @@ const RedGeometricBackground = () => {
         pointLight.position.set(0, 5, 5);
         scene.add(pointLight);
 
-        camera.position.z = 8;
-        camera.position.y = 2;
+        camera.position.set(cameraPos[0], cameraPos[1], cameraPos[2]);
 
         // Animation
         let frame = 0;
@@ -127,10 +137,11 @@ const RedGeometricBackground = () => {
             for (let i = 0; i < ashCount; i++) {
                 ashPos.setY(i, ashPos.getY(i) + ashVelocities[i]);
 
-                // Reset ash if it goes too high
-                if (ashPos.getY(i) > 6) {
-                    ashPos.setY(i, -4);
-                    ashPos.setX(i, (Math.random() - 0.5) * 20);
+                // Reset ash if it goes too high (scaled with camera depth)
+                // Reset ash if it goes too high (scaled with coverage)
+                if (ashPos.getY(i) > 40) {
+                    ashPos.setY(i, -30);
+                    ashPos.setX(i, (Math.random() - 0.5) * (planeSize[0] * 2.5));
                 }
             }
             ashPos.needsUpdate = true;
@@ -174,7 +185,7 @@ const RedGeometricBackground = () => {
         <div
             ref={containerRef}
             className="absolute inset-0 pointer-events-none z-0 bg-transparent overflow-hidden"
-            style={{ maskImage: 'linear-gradient(to bottom, black 0%, black 80%, transparent 100%)' }}
+            style={{ maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)' }}
         />
     );
 };
