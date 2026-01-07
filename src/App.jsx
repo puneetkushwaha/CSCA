@@ -9,8 +9,15 @@ import Home from './pages/Home';
 import Programs from './pages/Programs';
 import Certifications from './pages/Certifications';
 import CertificationDetail from './pages/CertificationDetail';
+import CertificationPathway from './pages/CertificationPathway';
+import ExamSystem from './pages/ExamSystem';
+import CertificateVerification from './pages/CertificateVerification';
+import DigitalBadges from './pages/DigitalBadges';
 import CorporateTraining from './pages/CorporateTraining';
 import Resources from './pages/Resources';
+import PartnersEcosystem from './pages/PartnersEcosystem';
+import Accreditation from './pages/Accreditation';
+import CareerOpportunities from './pages/CareerOpportunities';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -30,9 +37,12 @@ const ScrollToTop = () => {
   return null;
 };
 
+import CursorFollower from './components/CursorFollower';
+
 const MainLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <CursorFollower />
       <AnnouncementBar />
       <Navbar />
       <div className="flex-grow">
@@ -54,6 +64,16 @@ function App() {
           <Route path="/programs" element={<Programs />} />
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/certification/:id" element={<CertificationDetail />} />
+
+          {/* New Sitemap Routes */}
+          <Route path="/certification-pathway" element={<CertificationPathway />} />
+          <Route path="/exam-system" element={<ExamSystem />} />
+          <Route path="/certificate-verification" element={<CertificateVerification />} />
+          <Route path="/digital-badges" element={<DigitalBadges />} />
+          <Route path="/career-opportunities" element={<CareerOpportunities />} />
+          <Route path="/partners-ecosystem" element={<PartnersEcosystem />} />
+          <Route path="/accreditation" element={<Accreditation />} />
+
           <Route path="/corporate-training" element={<CorporateTraining />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/about" element={<About />} />
