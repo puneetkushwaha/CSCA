@@ -1,27 +1,45 @@
 import React, { useState } from 'react';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { Plus, Minus, HelpCircle, ChevronDown, Search, ArrowRight } from 'lucide-react';
 import RedGeometricBackground from '../components/RedGeometricBackground';
 
-const FAQItem = ({ question, answer, isOpen, toggle }) => {
+const FAQItem = ({ question, answer, isOpen, toggle, index }) => {
   return (
-    <div className="border-b border-white/10 last:border-0">
+    <div
+      className={`group border-b border-white/10 transition-all duration-500 backdrop-blur-md
+        ${isOpen ? 'bg-black/60 border-red-600/50' : 'hover:bg-black/40 bg-black/20'}`}
+    >
       <button
         onClick={toggle}
-        className="w-full py-6 flex items-start justify-between gap-4 text-left group transition-all duration-300"
+        className="w-full py-6 px-6 sm:px-8 flex items-center justify-between gap-6 text-left relative overflow-hidden"
       >
-        <span className={`text-lg font-bold transition-colors duration-300 ${isOpen ? 'text-red-500' : 'text-white group-hover:text-red-400'}`}>
-          {question}
-        </span>
-        <div className={`mt-1 p-1 rounded-full border transition-all duration-300 ${isOpen ? 'border-red-500 bg-red-500/10 text-red-500 rotate-180' : 'border-white/20 text-white/50 group-hover:border-red-500/50 group-hover:text-red-400'}`}>
-          {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+        {/* Active Indicator Line */}
+        <div className={`absolute left-0 top-0 bottom-0 w-1 bg-red-600 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}></div>
+
+        <div className="flex-1 relative z-10">
+          <div className="flex items-center gap-3 mb-2">
+            <span className={`text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded border transition-all duration-300
+                  ${isOpen ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-white/5 border-white/10 text-white/30'}`}>
+              Q: {String(index + 1).padStart(2, '0')}
+            </span>
+          </div>
+          <h3 className={`text-lg md:text-xl font-bold transition-colors duration-300 pr-8
+            ${isOpen ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>
+            {question}
+          </h3>
+        </div>
+
+        <div className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 relative z-10 bg-black/50
+          ${isOpen ? 'border-red-500 text-red-500 rotate-180 shadow-[0_0_15px_rgba(220,38,38,0.3)]' : 'border-white/10 text-white/30 group-hover:border-white/30 group-hover:text-white'}`}>
+          <ChevronDown className="w-5 h-5" />
         </div>
       </button>
 
       <div
-        className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0 pb-0'}`}
+        className={`grid transition-all duration-500 ease-in-out px-6 sm:px-8
+          ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-8' : 'grid-rows-[0fr] opacity-0 pb-0'}`}
       >
         <div className="overflow-hidden">
-          <div className="text-gray-300 leading-relaxed text-sm md:text-base space-y-4 pr-8">
+          <div className="text-gray-400 leading-relaxed text-sm md:text-base space-y-4 max-w-3xl border-t border-white/5 pt-6">
             {answer}
           </div>
         </div>
@@ -32,6 +50,7 @@ const FAQItem = ({ question, answer, isOpen, toggle }) => {
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const faqs = [
     {
@@ -44,7 +63,7 @@ const FAQ = () => {
         <>
           <p className="font-bold text-white mb-2">Yes.</p>
           <p>CSCA certifications are globally valid skill certifications designed to be:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
+          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2 marker:text-red-500">
             <li>Accepted for international job applications</li>
             <li>Useful for global freelancing platforms</li>
             <li>Relevant for remote cybersecurity roles</li>
@@ -59,14 +78,16 @@ const FAQ = () => {
       answer: (
         <>
           <p>CSCA certifications are suitable for:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
+          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2 marker:text-red-500">
             <li>Students (BCA, BTech, MCA, Diploma, IT & CS background)</li>
             <li>Fresh graduates</li>
             <li>Working professionals</li>
             <li>Career switchers</li>
             <li>Freelancers and security enthusiasts</li>
           </ul>
-          <p className="mt-2 text-red-400 font-medium">No prior certification is required for Level-1.</p>
+          <p className="mt-4 inline-block px-3 py-1 bg-red-500/10 border border-red-500/20 rounded text-red-400 text-sm font-semibold">
+            No prior certification is required for Level-1.
+          </p>
         </>
       )
     },
@@ -75,21 +96,29 @@ const FAQ = () => {
       answer: (
         <>
           <p>CSCA follows a two-level international certification framework:</p>
-          <div className="mt-4 space-y-4">
-            <div className="bg-white/5 p-4 rounded-lg border-l-2 border-red-500">
-              <h4 className="text-white font-bold mb-1">Level 1 – Foundation Certifications (Global Entry-Level)</h4>
-              <ul className="list-disc pl-5 space-y-1 text-gray-400 text-sm">
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            <div className="flex-1 bg-black border border-white/10 p-5 rounded-xl hover:border-red-600/30 transition-colors">
+              <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                Level 1 – Foundation
+              </h4>
+              <p className="text-xs text-red-400 font-bold uppercase tracking-wider mb-3">Global Entry-Level</p>
+              <ul className="list-disc pl-4 space-y-1 text-gray-400 text-sm marker:text-white/20">
                 <li>Beginner-friendly</li>
                 <li>Core cybersecurity concepts + skills</li>
-                <li>Ideal for global profile building and LinkedIn visibility</li>
+                <li>Ideal for global profile building</li>
               </ul>
             </div>
-            <div className="bg-white/5 p-4 rounded-lg border-l-2 border-red-700">
-              <h4 className="text-white font-bold mb-1">Level 2 – Professional Certifications (Advanced & Global)</h4>
-              <ul className="list-disc pl-5 space-y-1 text-gray-400 text-sm">
+            <div className="flex-1 bg-gradient-to-br from-red-950/20 to-black border border-red-900/30 p-5 rounded-xl">
+              <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                Level 2 – Professional
+              </h4>
+              <p className="text-xs text-red-400 font-bold uppercase tracking-wider mb-3">Advanced & Global</p>
+              <ul className="list-disc pl-4 space-y-1 text-gray-400 text-sm marker:text-red-500">
                 <li>Domain-specific and job-role oriented</li>
-                <li>Practical exams, projects, and case studies</li>
-                <li>Designed for corporate, consulting, and international roles</li>
+                <li>Practical exams, projects, case studies</li>
+                <li>Designed for corporate roles</li>
               </ul>
             </div>
           </div>
@@ -99,9 +128,15 @@ const FAQ = () => {
     {
       question: "Are CSCA certifications free?",
       answer: (
-        <ul className="list-disc pl-5 space-y-2">
-          <li><span className="text-white font-semibold">Level-1 certifications</span> may be available through limited global promotional or academic vouchers.</li>
-          <li><span className="text-white font-semibold">Level-2 certifications</span> are paid, premium, and professionally evaluated.</li>
+        <ul className="space-y-3">
+          <li className="flex items-start gap-3">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white"></span>
+            <span><span className="text-white font-semibold">Level-1 certifications</span> may be available through limited global promotional or academic vouchers.</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-500"></span>
+            <span><span className="text-white font-semibold">Level-2 certifications</span> are paid, premium, and professionally evaluated.</span>
+          </li>
         </ul>
       )
     },
@@ -110,13 +145,13 @@ const FAQ = () => {
       answer: (
         <>
           <p>CSCA certificates are:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
+          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2 marker:text-red-500">
             <li>Skill-focused (not country-restricted)</li>
             <li>Designed by active cybersecurity professionals</li>
             <li>Valid for global resumes, LinkedIn, GitHub, and portfolios</li>
             <li>Suitable for international companies, startups, and remote teams</li>
           </ul>
-          <p className="mt-2">They demonstrate practical competency, which is globally valued more than theory-only certifications.</p>
+          <p className="mt-3 text-sm text-gray-500 italic border-l-2 border-white/10 pl-3">They demonstrate practical competency, which is globally valued more than theory-only certifications.</p>
         </>
       )
     },
@@ -124,9 +159,9 @@ const FAQ = () => {
       question: "Is training mandatory to appear for CSCA exams?",
       answer: (
         <>
-          <p className="font-bold text-white mb-2">No.</p>
+          <p className="text-xl font-black text-white mb-2">NO.</p>
           <p>CSCA follows an open and global certification model:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
+          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2 marker:text-red-500">
             <li>You can prepare through self-study or any institute worldwide</li>
             <li>Certification depends only on passing the CSCA assessment</li>
           </ul>
@@ -138,12 +173,14 @@ const FAQ = () => {
       answer: (
         <>
           <p>Depending on the certification:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
-            <li>Online proctored exams</li>
-            <li>MCQs + scenario-based questions</li>
-            <li>Practical labs / assignments (Level-2)</li>
-          </ul>
-          <p className="mt-2 text-white">All exams are conducted via the official CSCA online examination system, accessible globally.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {['Online Proctored', 'MCQs + Scenario', 'Practical Labs', 'Assignments'].map((tag, i) => (
+              <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold text-gray-300 uppercase tracking-wide">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="mt-4 text-white">All exams are conducted via the official CSCA online examination system, accessible globally.</p>
         </>
       )
     },
@@ -153,22 +190,29 @@ const FAQ = () => {
         <>
           <p className="font-bold text-white mb-2">Yes.</p>
           <p>Each CSCA certificate includes:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
+          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2 marker:text-red-500">
             <li>A unique global Certificate ID</li>
             <li>Online verification portal</li>
             <li>Candidate and certification details for international verification</li>
           </ul>
-          <p className="mt-2">Employers worldwide can verify authenticity instantly.</p>
+          <p className="mt-2 text-red-400/80">Employers worldwide can verify authenticity instantly.</p>
         </>
       )
     },
     {
       question: "Do CSCA certificates expire?",
       answer: (
-        <ul className="space-y-2">
-          <li className="flex items-center gap-2"><span className="text-red-500 font-bold">Level-1 certifications:</span> Lifetime validity</li>
-          <li className="flex items-center gap-2"><span className="text-red-500 font-bold">Level-2 certifications:</span> Renewal may apply to keep skills aligned with global security updates</li>
-        </ul>
+        <div className="space-y-3">
+          <div className="p-3 bg-white/5 rounded-lg border-l-2 border-white">
+            <span className="block text-xs uppercase text-gray-500 font-bold mb-1">Level-1</span>
+            <span className="text-white font-bold">Lifetime Validity</span>
+          </div>
+          <div className="p-3 bg-red-950/20 rounded-lg border-l-2 border-red-500">
+            <span className="block text-xs uppercase text-red-400/70 font-bold mb-1">Level-2</span>
+            <span className="text-white font-bold">Renewal may apply</span>
+            <span className="text-sm text-gray-400 ml-2">(to keep skills aligned with global updates)</span>
+          </div>
+        </div>
       )
     },
     {
@@ -177,12 +221,12 @@ const FAQ = () => {
         <>
           <p className="font-bold text-white mb-2">Yes.</p>
           <p>CSCA supports partnerships with:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
+          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2 marker:text-red-500">
             <li>Indian and international training institutes</li>
             <li>Corporates and startups</li>
             <li>Government, PSU, and global organizations</li>
           </ul>
-          <p className="mt-2">All partnerships follow quality and compliance standards.</p>
+          <p className="mt-2 text-sm text-gray-500">All partnerships follow quality and compliance standards.</p>
         </>
       )
     },
@@ -190,9 +234,9 @@ const FAQ = () => {
       question: "Does CSCA provide global job placement?",
       answer: (
         <>
-          <p>CSCA is a certification authority, <span className="text-red-400">not a placement agency.</span></p>
+          <p>CSCA is a certification authority, <span className="text-red-400 font-bold underline decoration-red-500/30 underline-offset-4">not a placement agency.</span></p>
           <p className="mt-2">However, CSCA certifications help candidates:</p>
-          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2">
+          <ul className="list-disc pl-5 space-y-1 text-gray-400 mt-2 marker:text-red-500">
             <li>Improve global job eligibility</li>
             <li>Apply for remote and international roles</li>
             <li>Strengthen freelancing and consulting profiles</li>
@@ -203,10 +247,13 @@ const FAQ = () => {
     {
       question: "Why choose CSCA as a global certification?",
       answer: (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
           {['Globally applicable skill validation', 'Practical and industry-driven exams', 'International verification system', 'Open learning model', 'Designed for modern cybersecurity careers'].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-white bg-white/5 p-2 rounded border border-white/10">
-              <span className="text-red-500 font-bold">✔</span> {item}
+            <div key={i} className="flex items-center gap-3 text-gray-300 bg-white/[0.03] p-3 rounded-lg border border-white/5 hover:border-red-500/30 transition-colors">
+              <div className="w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                <span className="text-red-500 text-[10px] font-bold">✔</span>
+              </div>
+              {item}
             </div>
           ))}
         </div>
@@ -214,41 +261,62 @@ const FAQ = () => {
     }
   ];
 
+  const filteredFaqs = faqs.filter(f =>
+    f.question.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen bg-black text-white relative selection:bg-red-500/30 overflow-hidden font-['Inter']">
       {/* Background Layer */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <RedGeometricBackground
           height={40}
-          jaggednessScale={2}
-          opacity={0.3}
+          jaggednessScale={2.5}
+          opacity={0.4}
           planeSize={[60, 40]}
           cameraPos={[0, 0, 15]}
-          ashCount={150}
+          ashCount={100}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/80 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-black/80 to-black"></div>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-24 relative z-10">
 
         {/* Header */}
         <div className="text-center mb-20 animate-in fade-in slide-in-from-top-4 duration-700">
-          <div className="inline-flex items-center justify-center p-3 bg-red-600/10 rounded-2xl mb-6 ring-1 ring-red-500/20 backdrop-blur-sm">
-            <HelpCircle className="w-8 h-8 text-red-500" />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase mb-4">
-            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Questions</span>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase mb-6 leading-none">
+            Common <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">Queries</span>
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Everything you need to know about CSCA certifications, global validity, and examination process.
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            Straight answers to your questions about CSCA certifications, global validity, and examination processes.
           </p>
+
+          {/* Search Box */}
+          <div className="mt-8 max-w-lg mx-auto">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-red-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative bg-[#0a0a0a] border border-white/10 rounded-full flex items-center p-1.5 w-full group-focus-within:border-red-500/50 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/40">
+                  <Search className="w-4 h-4" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Type to search..."
+                  className="bg-transparent border-none outline-none text-white text-sm px-3 w-full placeholder:text-white/20"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 md:p-10 shadow-[0_0_50px_rgba(220,38,38,0.1)] backdrop-blur-md">
-          {faqs.map((faq, index) => (
+        {/* FAQ List - Accordion/List Style */}
+        <div className="space-y-4">
+          {filteredFaqs.map((faq, index) => (
             <FAQItem
               key={index}
+              index={index}
               question={faq.question}
               answer={faq.answer}
               isOpen={openIndex === index}
@@ -258,10 +326,12 @@ const FAQ = () => {
         </div>
 
         {/* Contact Strip */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-400">Still have questions?</p>
-          <a href="/contact" className="inline-block mt-4 px-8 py-3 bg-white text-black font-black uppercase tracking-wider text-xs rounded-full hover:bg-red-600 hover:text-white transition-all duration-300">
-            Contact Support
+        <div className="mt-24 text-center">
+          <p className="text-gray-400 mb-6">
+            Still have questions? Our team is ready to assist.
+          </p>
+          <a href="/contact" className="inline-flex items-center gap-3 px-8 py-3.5 bg-white text-black font-black uppercase tracking-[0.2em] text-xs rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-red-600/50">
+            Contact Support <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
