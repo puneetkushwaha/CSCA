@@ -76,14 +76,14 @@ const Certifications = () => {
                 <div className="text-center mb-24 cursor-default">
                     <div className="inline-flex items-center gap-3 mb-4 animate-in fade-in slide-in-from-top-4 duration-1000">
                         <div className="h-px w-12 bg-gradient-to-r from-transparent to-red-600"></div>
-                        <span className="text-xs font-black text-red-500 uppercase tracking-[0.4em]">Global Standard</span>
+                        <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Global Standard</span>
                         <div className="h-px w-12 bg-gradient-to-l from-transparent to-red-600"></div>
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase mb-6">
                         Certification <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Pathways</span>
                     </h1>
-                    <p className="text-lg text-white/40 max-w-2xl mx-auto font-medium leading-relaxed">
+                    <p className="text-lg text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed">
                         From entry-level analyst to elite threat hunter.
                         Validate your expertise with practical, hands-on examinations.
                     </p>
@@ -101,7 +101,7 @@ const Certifications = () => {
 
                             {/* Level Tag */}
                             <div className="absolute top-6 right-6">
-                                <span className={`px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-black uppercase tracking-[0.2em] group-hover:bg-red-600 group-hover:text-white group-hover:border-red-600 transition-all duration-500 text-white/30`}>
+                                <span className={`px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-black uppercase tracking-[0.2em] group-hover:bg-red-600 group-hover:text-white group-hover:border-red-600 transition-all duration-500 text-white/90`}>
                                     {cert.level}
                                 </span>
                             </div>
@@ -122,14 +122,14 @@ const Certifications = () => {
                                     </h2>
                                 </div>
 
-                                <p className="text-sm text-white/40 leading-relaxed font-medium mb-8 border-l-2 border-white/10 pl-4 group-hover:border-red-600 transition-colors">
+                                <p className="text-sm text-gray-300 leading-relaxed font-medium mb-8 border-l-2 border-white/10 pl-4 group-hover:border-red-600 transition-colors">
                                     {cert.description}
                                 </p>
 
                                 {/* Features */}
                                 <ul className="space-y-3 mb-8">
                                     {cert.features.map((feat, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-xs font-bold text-white/60 uppercase tracking-wide">
+                                        <li key={i} className="flex items-center gap-3 text-xs font-bold text-gray-200 uppercase tracking-wide">
                                             <CheckCircle className="w-3.5 h-3.5 text-red-600/50 group-hover:text-red-500 transition-colors" />
                                             {feat}
                                         </li>
@@ -141,7 +141,7 @@ const Certifications = () => {
                             <div className="p-6 border-t border-white/5 bg-white/[0.01] relative z-10">
                                 <div className="flex items-center justify-between mb-4">
                                     <div>
-                                        <span className="block text-[10px] uppercase tracking-widest text-white/20 font-bold mb-1">One-time Cost</span>
+                                        <span className="block text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">One-time Cost</span>
                                         <span className="text-2xl font-black text-white group-hover:text-red-500 transition-colors">{cert.price}</span>
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@ const Certifications = () => {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
                         <div className="text-center md:text-left">
                             <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2">Training a Team?</h3>
-                            <p className="text-sm text-white/50 max-w-md">Get enterprise-grade reporting, bulk discounts, and dedicated support for your SOC team.</p>
+                            <p className="text-sm text-gray-300 max-w-md">Get enterprise-grade reporting, bulk discounts, and dedicated support for your SOC team.</p>
                         </div>
 
                         <button className="px-8 py-3 bg-transparent border border-white/20 text-white font-black uppercase tracking-[0.2em] text-xs rounded-full hover:bg-white hover:text-black transition-all duration-300">

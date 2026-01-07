@@ -5,7 +5,7 @@ const AnnouncementBar = () => {
     return (
         <a
             href="/certifications"
-            className="block bg-black border-b border-white/10 py-2.5 transition-colors duration-300 group"
+            className="block bg-black border-b border-white/10 py-2.5 transition-colors duration-300 group relative z-50"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-center gap-2 text-center">
