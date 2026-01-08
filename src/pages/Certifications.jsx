@@ -39,9 +39,19 @@ const Certifications = () => {
             code: 'A+',
             level: 'Security Analyst',
             description: "CompTIA A+ is the starting point for your IT career. Covering hardware, software, networking, troubleshooting, and basic security skills required for cybersecurity roles.",
-            category: 'Cyber',
+            category: 'Tech Support',
             icon: <Cpu className="w-8 h-8 text-white" />,
             color: 'from-orange-600 to-orange-900'
+        },
+        {
+            id: 'a-plus-network',
+            title: 'a+ Network',
+            code: 'A+N',
+            level: 'Network Administrator',
+            description: "Network-focused A+ certification path covering essential networking skills and infrastructure support.",
+            category: 'Network',
+            icon: <Globe className="w-8 h-8 text-white" />,
+            color: 'from-blue-500 to-indigo-600'
         },
         {
             id: 'cysa',
@@ -59,7 +69,7 @@ const Certifications = () => {
             code: 'LIN+',
             level: 'Intermediate',
             description: "CompTIA Linux+ proves you can manage, secure, and troubleshoot Linux systems across cloud and hybrid environments. With skills in automation, containers, and orchestration, Linux+ prepares you for in-demand roles that keep critical business platforms running.",
-            category: 'Cloud',
+            category: ['Cloud', 'Network'],
             icon: <Terminal className="w-8 h-8 text-white" />,
             color: 'from-yellow-600 to-yellow-900'
         },
@@ -67,7 +77,7 @@ const Certifications = () => {
             id: 'data-plus',
             title: 'Data+',
             code: 'DATA+',
-            level: 'Core',
+            level: 'Data Analyst',
             description: "CompTIA Data+ shows employers you can translate data into decisions. By proving your ability to analyze, visualize, and communicate insights, Data+ positions you for early-career analytics roles where turning information into action drives real business impact.",
             category: 'Data',
             icon: <BarChart className="w-8 h-8 text-white" />,
@@ -109,7 +119,7 @@ const Certifications = () => {
             code: 'PRO+',
             level: 'Pro',
             description: "CompTIA Project+ proves you can manage IT projects from start to finish and deliver results. It validates skills in team leadership, scheduling, documentation, and governance, fully preparing you to solve challenges and succeed in today’s fast-paced technology environments.",
-            category: 'Digital Skills',
+            category: ['Digital Skills', 'Tech Support'],
             icon: <ClipboardCheck className="w-8 h-8 text-white" />,
             color: 'from-indigo-600 to-indigo-900'
         },
@@ -119,7 +129,7 @@ const Certifications = () => {
             code: 'AIE',
             level: 'Career Builder',
             description: "Master the fundamentals of Artificial Intelligence. Learn how AI works, its impact on business, and how to use AI tools effectively to boost productivity and innovation.",
-            category: 'AI',
+            category: ['AI', 'Digital Skills'],
             icon: <Cpu className="w-8 h-8 text-white" />,
             color: 'from-blue-500 to-indigo-600'
         },
@@ -129,7 +139,7 @@ const Certifications = () => {
             code: 'AIM',
             level: 'Career Builder',
             description: "Leverage AI to revolutionize your marketing strategies. Learn to generate content, analyze customer data, and optimize campaigns using cutting-edge AI tools.",
-            category: 'AI',
+            category: ['AI', 'Digital Skills'],
             icon: <BarChart className="w-8 h-8 text-white" />,
             color: 'from-pink-500 to-rose-600'
         },
@@ -139,7 +149,7 @@ const Certifications = () => {
             code: 'AIS',
             level: 'Career Builder',
             description: "Transform your sales process with AI. specific techniques for lead scoring, personalized outreach, and automated follow-ups that drive revenue growth.",
-            category: 'AI',
+            category: ['AI', 'Digital Skills'],
             icon: <Target className="w-8 h-8 text-white" />,
             color: 'from-green-500 to-emerald-600'
         },
@@ -149,17 +159,17 @@ const Certifications = () => {
             code: 'AIP',
             level: 'Career Builder',
             description: "Become a power user of Generative AI. Learn the art and science of prompt engineering to get the best results from tools like ChatGPT, Claude, and Midjourney.",
-            category: 'AI',
+            category: ['AI', 'Digital Skills'],
             icon: <Terminal className="w-8 h-8 text-white" />,
             color: 'from-purple-500 to-violet-600'
         },
         {
             id: 'autoops-plus',
-            title: 'AutoOps+',
+            title: 'AutoOps+ (Coming June 2026)',
             code: 'AOP+',
-            level: 'Intermediate',
+            level: 'Systems Engineer',
             description: "Automate IT operations with confidence. Validate your skills in scripting, infrastructure as code, and automated remediation for modern systems.",
-            category: 'Cloud',
+            category: 'Network',
             icon: <Zap className="w-8 h-8 text-white" />,
             color: 'from-yellow-500 to-orange-600'
         },
@@ -189,7 +199,7 @@ const Certifications = () => {
             code: 'CLDE',
             level: 'Entry',
             description: "Start your cloud journey here. Understand cloud concepts, business value, and security basics perfect for non-technical professionals and beginners.",
-            category: 'Cloud',
+            category: ['Cloud', 'Digital Skills'],
             icon: <Cloud className="w-8 h-8 text-white" />,
             color: 'from-sky-400 to-blue-500'
         },
@@ -199,7 +209,7 @@ const Certifications = () => {
             code: 'CNX',
             level: 'Expert',
             description: "The intersection of Cloud and Networking. Master the design and implementation of complex cloud network architectures across multi-cloud environments.",
-            category: 'Cloud',
+            category: ['Cloud', 'Network'],
             icon: <Server className="w-8 h-8 text-white" />,
             color: 'from-indigo-600 to-purple-700'
         },
@@ -215,11 +225,11 @@ const Certifications = () => {
         },
         {
             id: 'data-analysis-essentials',
-            title: 'Data Analysis',
+            title: 'Data Analysis Essentials',
             code: 'DAE',
-            level: 'Entry',
+            level: 'Career Builder',
             description: "Essentials for making sense of data. Learn spreadsheet basics, data cleaning, and simple visualization techniques to support decision making.",
-            category: 'Data',
+            category: ['Data', 'Digital Skills'],
             icon: <BarChart className="w-8 h-8 text-white" />,
             color: 'from-green-500 to-teal-600'
         },
@@ -227,7 +237,7 @@ const Certifications = () => {
             id: 'datasys-plus',
             title: 'DataSys+',
             code: 'DS+',
-            level: 'Intermediate',
+            level: 'Database Administrator',
             description: "Database administration for the modern era. Validate skills in database deployment, management, security, and troubleshooting.",
             category: 'Data',
             icon: <Database className="w-8 h-8 text-white" />,
@@ -237,7 +247,7 @@ const Certifications = () => {
             id: 'datax',
             title: 'DataX',
             code: 'DX',
-            level: 'Expert',
+            level: 'Data Scientist',
             description: "Advanced Data Science certification. Validate expertise in unified data management, advanced analytics, and machine learning pipeline integration.",
             category: 'Data',
             icon: <Cpu className="w-8 h-8 text-white" />,
@@ -265,9 +275,9 @@ const Certifications = () => {
         },
         {
             id: 'hybrid-server-pro-1',
-            title: 'Hybrid Server Pro I',
+            title: 'Hybrid Server Pro I: Core',
             code: 'HSP1',
-            level: 'Pro',
+            level: 'Network Engineer',
             description: "Core server management skills. Deployment, storage, and compute management in hybrid Windows Server environments.",
             category: 'Network',
             icon: <Server className="w-8 h-8 text-white" />,
@@ -275,9 +285,9 @@ const Certifications = () => {
         },
         {
             id: 'hybrid-server-pro-2',
-            title: 'Hybrid Server Pro II',
+            title: 'Hybrid Server Pro II: Advanced',
             code: 'HSP2',
-            level: 'Adv',
+            level: 'Network Engineer',
             description: "Advanced hybrid infrastructure. High availability, disaster recovery, and advanced monitoring for enterprise server estates.",
             category: 'Network',
             icon: <Server className="w-8 h-8 text-white" />,
@@ -289,7 +299,7 @@ const Certifications = () => {
             code: 'ITFP',
             level: 'Entry',
             description: "Comprehensive introduction to IT. A robust starting point covering hardware, software, networking, and security concepts in depth.",
-            category: 'Tech Support',
+            category: ['Tech Support', 'Digital Skills'],
             icon: <Cpu className="w-8 h-8 text-white" />,
             color: 'from-cyan-500 to-blue-600'
         },
@@ -299,7 +309,7 @@ const Certifications = () => {
             code: 'LXP',
             level: 'Pro',
             description: "Advanced Linux system administration. Deep dive into automation, kernel tuning, and secure system configuration.",
-            category: 'Cloud',
+            category: ['Cloud', 'Network'],
             icon: <Terminal className="w-8 h-8 text-white" />,
             color: 'from-yellow-600 to-amber-700'
         },
@@ -369,7 +379,7 @@ const Certifications = () => {
             code: 'SOT+',
             level: 'Security Engineer',
             description: "Operational Technology Security. Securing industrial control systems, SCADA, and IoT environments.",
-            category: 'Cyber',
+            category: ['Cyber', 'Network'],
             icon: <Lock className="w-8 h-8 text-white" />,
             color: 'from-amber-600 to-orange-700'
         },
@@ -429,7 +439,7 @@ const Certifications = () => {
             code: 'KIT',
             level: 'Certification-Related Job Roles',
             description: "Official CompTIA Certification Kits provide you with the learning resources you need to prepare for exams.",
-            category: 'Cyber',
+            category: ['Cyber', 'Data', 'Digital Skills', 'Network', 'Tech Support'],
             icon: <Briefcase className="w-8 h-8 text-white" />,
             color: 'from-slate-600 to-slate-900'
         },
@@ -439,9 +449,19 @@ const Certifications = () => {
             code: 'CE',
             level: 'Certification-Related Job Roles',
             description: "Keep your certification up to date with CompTIA's Continuing Education (CE) program.",
-            category: 'Cyber',
+            category: ['Cyber', 'Data', 'Network', 'Tech Support'],
             icon: <BookOpen className="w-8 h-8 text-white" />,
             color: 'from-blue-800 to-blue-950'
+        },
+        {
+            id: 'library-suite',
+            title: 'Library Suite',
+            code: 'LIB',
+            level: 'Network Engineer',
+            description: "CompTIA Library Suite Training Limited Access.",
+            category: 'Tech Support',
+            icon: <BookOpen className="w-8 h-8 text-white" />,
+            color: 'from-emerald-600 to-teal-800'
         }
     ];
 
@@ -449,7 +469,7 @@ const Certifications = () => {
         ? certifications
         : activeCategory === 'Overview'
             ? []
-            : certifications.filter(cert => cert.category === activeCategory);
+            : certifications.filter(cert => Array.isArray(cert.category) ? cert.category.includes(activeCategory) : cert.category === activeCategory);
 
     return (
         <div className="min-h-screen bg-black text-white font-['Inter'] relative selection:bg-red-500/30 overflow-hidden">
