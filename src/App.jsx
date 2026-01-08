@@ -18,6 +18,7 @@ import Resources from './pages/Resources';
 import PartnersEcosystem from './pages/PartnersEcosystem';
 import Accreditation from './pages/Accreditation';
 import CareerOpportunities from './pages/CareerOpportunities';
+import ExploreCareers from './pages/ExploreCareers';
 import ExploreIndustries from './pages/ExploreIndustries';
 import ExploreTechCareers from './pages/ExploreTechCareers';
 import CareersPlus from './pages/CareersPlus';
@@ -46,7 +47,7 @@ import CartDrawer from './components/CartDrawer';
 
 const MainLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-black">
       <CursorFollower />
       <CartDrawer />
       <AnnouncementBar />
@@ -79,6 +80,7 @@ function App() {
             <Route path="/certification/:id" element={<CertificationDetail />} />
 
             {/* New Sitemap Routes */}
+            <Route path="/explore-careers" element={<ExploreCareers />} />
             <Route path="/certification-pathway" element={<CertificationPathway />} />
             <Route path="/exam-system" element={<ExamSystem />} />
             <Route path="/certificate-verification" element={<CertificateVerification />} />

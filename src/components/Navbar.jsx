@@ -108,7 +108,7 @@ const Navbar = () => {
     const navLinks = [
         {
             name: 'Explore Careers',
-            path: '/career-opportunities',
+            path: '/explore-careers',
             dropdown: [
                 { name: 'Explore Industries', path: '/explore-industries' },
                 { name: 'Explore Tech Careers', path: '/explore-tech-careers' },

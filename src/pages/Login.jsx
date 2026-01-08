@@ -41,6 +41,8 @@ const Login = () => {
         planeSize={[60, 40]}
         cameraPos={[0, 0, 15]}
         ashCount={200}
+        showPoints={false}
+        wireframeOpacity={0.2}
       />
 
       {/* Main Scrollable Area */}
