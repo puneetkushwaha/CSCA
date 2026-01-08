@@ -42,11 +42,13 @@ const ScrollToTop = () => {
 };
 
 import CursorFollower from './components/CursorFollower';
+import CartDrawer from './components/CartDrawer';
 
 const MainLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <CursorFollower />
+      <CartDrawer />
       <AnnouncementBar />
       <Navbar />
       <div className="flex-grow">
@@ -57,46 +59,61 @@ const MainLayout = () => {
   );
 };
 
+import Blog from './pages/Blog';
+import Research from './pages/Research';
+import CaseStudies from './pages/CaseStudies';
+
+import { CartProvider } from './context/CartContext';
+
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <Routes>
-        {/* Public Routes with Navbar/Footer */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/certifications" element={<Certifications />} />
-          <Route path="/certification/:id" element={<CertificationDetail />} />
+      <CartProvider>
+        <ScrollToTop />
+        <Routes>
+          {/* Public Routes with Navbar/Footer */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/certification/:id" element={<CertificationDetail />} />
 
-          {/* New Sitemap Routes */}
-          <Route path="/certification-pathway" element={<CertificationPathway />} />
-          <Route path="/exam-system" element={<ExamSystem />} />
-          <Route path="/certificate-verification" element={<CertificateVerification />} />
-          <Route path="/digital-badges" element={<DigitalBadges />} />
-          <Route path="/career-opportunities" element={<CareerOpportunities />} />
-          <Route path="/explore-industries" element={<ExploreIndustries />} />
-          <Route path="/explore-tech-careers" element={<ExploreTechCareers />} />
-          <Route path="/careers-plus" element={<CareersPlus />} />
-          <Route path="/explore-tech-careers/:careerId" element={<TechCareerDetail />} />
-          <Route path="/partners-ecosystem" element={<PartnersEcosystem />} />
-          <Route path="/accreditation" element={<Accreditation />} />
+            {/* New Sitemap Routes */}
+            <Route path="/certification-pathway" element={<CertificationPathway />} />
+            <Route path="/exam-system" element={<ExamSystem />} />
+            <Route path="/certificate-verification" element={<CertificateVerification />} />
+            <Route path="/digital-badges" element={<DigitalBadges />} />
+            <Route path="/career-opportunities" element={<CareerOpportunities />} />
+            <Route path="/explore-industries" element={<ExploreIndustries />} />
+            <Route path="/explore-tech-careers" element={<ExploreTechCareers />} />
+            <Route path="/careers-plus" element={<CareersPlus />} />
+            <Route path="/explore-tech-careers/:careerId" element={<TechCareerDetail />} />
+            <Route path="/partners-ecosystem" element={<PartnersEcosystem />} />
+            <Route path="/accreditation" element={<Accreditation />} />
 
-          <Route path="/corporate-training" element={<CorporateTraining />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-        </Route>
+            <Route path="/corporate-training" element={<CorporateTraining />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/blog" element={<Blog />} />
+            <Route path="/resources/research" element={<Research />} />
+            <Route path="/resources/case-studies" element={<CaseStudies />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
 
-        {/* Auth & App Routes (No Standard Navbar/Footer) */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
+          </Route>
+
+          {/* Auth & App Routes (No Standard Navbar/Footer) */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* Standalone Dashboard */}
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </CartProvider>
     </Router>
   );
 }

@@ -20,6 +20,10 @@ const RedGeometricBackground = ({
 
         // Scene Setup
         const scene = new THREE.Scene();
+        // Fog for depth fading - Critical for the "infinite" feel
+        // Using red-black fog for better branding integration
+        scene.fog = new THREE.FogExp2(0x000000, 0.02);
+
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
@@ -27,12 +31,13 @@ const RedGeometricBackground = ({
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         containerRef.current.appendChild(renderer.domElement);
 
-        // Geometry - Low Poly Plane (Customizable via props)
+        // --- GEOMETRY RECONSTRUCTION ---
+        // We revert to the "Mountain" logic instead of the flat grid
         const geometry = new THREE.PlaneGeometry(planeSize[0], planeSize[1], 50, 50);
         const positionAttribute = geometry.getAttribute('position');
         const originalPositions = new Float32Array(positionAttribute.array);
 
-        // Create a L-to-R climbing height gradient for the mountains
+        // Create the "Aggressive" jagged mountain shape
         for (let i = 0; i < positionAttribute.count; i++) {
             const x = positionAttribute.getX(i);
 
@@ -40,7 +45,7 @@ const RedGeometricBackground = ({
             let normalizedX = (x + planeSize[0] / 2) / planeSize[0];
             if (reverse) normalizedX = 1 - normalizedX;
 
-            // Base height increases towards the right, plus jagged peaks
+            // Base height increases towards one side (Climb effect)
             const climbHeight = normalizedX * height;
             const jaggedness = Math.random() * jaggednessScale;
 
@@ -49,52 +54,61 @@ const RedGeometricBackground = ({
         positionAttribute.needsUpdate = true;
         geometry.computeVertexNormals();
 
-        // Mesh Material (Subtle base)
+        // --- LAYER 1: SOLID MESH (The Body) ---
+        // This provides the dark silhouette against the lights
         const material = new THREE.MeshPhongMaterial({
-            color: 0x660000,
+            color: 0x660000, // Dark Red base
             transparent: true,
-            opacity: opacity,
+            opacity: opacity, // Controllable opacity
             flatShading: true,
-            side: THREE.DoubleSide
+            side: THREE.DoubleSide,
+            emissive: 0x220000,
+            emissiveIntensity: 0.2
         });
         const mesh = new THREE.Mesh(geometry, material);
         mesh.rotation.x = -Math.PI / 2.2;
         mesh.position.set(meshPos[0], meshPos[1], meshPos[2]);
         scene.add(mesh);
 
-        // Wireframe / Edges (The Plexus Look)
-        const wireframe = new THREE.WireframeGeometry(geometry);
+        // --- LAYER 2: WIREFRAME (The "Wire Wala" request) ---
+        // We add a prominent wireframe overlay
+        const wireframeGeometry = new THREE.WireframeGeometry(geometry);
         const lineMaterial = new THREE.LineBasicMaterial({
-            color: 0xff0000,
+            color: 0xff0000, // Bright Red Lines
+            transparent: true,
+            opacity: 0.5, // Visible but not overwhelming
+            linewidth: 1
+        });
+        const lineSegments = new THREE.LineSegments(wireframeGeometry, lineMaterial);
+        lineSegments.rotation.x = mesh.rotation.x;
+        lineSegments.position.copy(mesh.position);
+        // Slightly offset Z to prevent z-fighting with mesh
+        lineSegments.position.y += 0.02;
+        scene.add(lineSegments);
+
+        // --- LAYER 3: VERTICES (Tech Points) ---
+        // Adds that "Data/Node" aesthetic
+        const pointsMaterial = new THREE.PointsMaterial({
+            color: 0xff3333,
+            size: 0.08,
             transparent: true,
             opacity: 0.8
         });
-        const lineSegments = new THREE.LineSegments(wireframe, lineMaterial);
-        lineSegments.rotation.x = mesh.rotation.x;
-        lineSegments.position.y = mesh.position.y;
-        scene.add(lineSegments);
-
-        // Vertices (Points)
-        const pointsMaterial = new THREE.PointsMaterial({
-            color: 0xff0000,
-            size: 0.1,
-            transparent: true,
-            opacity: 1.0
-        });
         const points = new THREE.Points(geometry, pointsMaterial);
         points.rotation.x = mesh.rotation.x;
-        points.position.y = mesh.position.y;
+        points.position.copy(mesh.position);
+        points.position.y += 0.05;
         scene.add(points);
 
-        // Subtle Ashes / Sparks System
+        // --- LAYER 4: ASHES (Atmosphere) ---
         const ashGeometry = new THREE.BufferGeometry();
         const ashPositions = new Float32Array(ashCount * 3);
         const ashVelocities = new Float32Array(ashCount);
 
         for (let i = 0; i < ashCount; i++) {
-            ashPositions[i * 3] = (Math.random() - 0.5) * (planeSize[0] * 1.5); // X Spread
-            ashPositions[i * 3 + 1] = (Math.random() - 0.5) * 30; // Random Y position within range
-            ashPositions[i * 3 + 2] = (Math.random() - 0.5) * 15; // Z Spread
+            ashPositions[i * 3] = (Math.random() - 0.5) * (planeSize[0] * 1.5);
+            ashPositions[i * 3 + 1] = (Math.random() - 0.5) * 30 + 5; // Higher up
+            ashPositions[i * 3 + 2] = (Math.random() - 0.5) * 15;
             ashVelocities[i] = 0.01 + Math.random() * 0.03;
         }
 
@@ -103,50 +117,60 @@ const RedGeometricBackground = ({
             color: ashColor,
             size: ashSize,
             transparent: true,
-            opacity: 0.6,
+            opacity: 0.8,
             blending: THREE.AdditiveBlending
         });
         const ashes = new THREE.Points(ashGeometry, ashMaterial);
         scene.add(ashes);
 
-        // Lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+        // --- LIGHTING ---
+        // Essential for the Phong Material to show depth
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
         scene.add(ambientLight);
 
-        const pointLight = new THREE.PointLight(0xff0000, 30);
-        pointLight.position.set(0, 5, 5);
+        const pointLight = new THREE.PointLight(0xff0000, 20, 50);
+        pointLight.position.set(0, 10, 10);
         scene.add(pointLight);
+
+        // Spotlight for dramatic shadows
+        const spotLight = new THREE.SpotLight(0xffffff, 10);
+        spotLight.position.set(0, 20, 0);
+        spotLight.angle = 0.5;
+        spotLight.penumbra = 1;
+        scene.add(spotLight);
 
         camera.position.set(cameraPos[0], cameraPos[1], cameraPos[2]);
 
-        // Animation
+        // --- ANIMATION ---
         let frame = 0;
         const animate = () => {
             frame += 0.005;
 
-            // Subtle wave movement
-            const pos = geometry.getAttribute('position');
-            for (let i = 0; i < pos.count; i++) {
-                const z = originalPositions[i * 3 + 2] + Math.sin(frame + i * 0.2) * 0.15;
-                pos.setZ(i, z);
-            }
-            pos.needsUpdate = true;
+            // Subtle "Breathing" / Wave movement of the mountain
+            // We modify the mesh geometry vertices directly
+            // Note: WireframeGeometry is static, so it won't undulate strictly with the mesh unless recomputed.
+            // For performance, we often just undulate the mesh and let the wireframe be static or simple transform.
+            // However, to keep them synced without expensive re-computation:
+            // We will just rotate/float the whole group or apply valid vertex shader if possible.
+            // Here we'll stick to a simple float to avoid desync between Mesh and Wireframe lines.
 
-            // Animate Ashes upwards
+            const floatY = Math.sin(frame * 0.5) * 0.2;
+            mesh.position.y = meshPos[1] + floatY;
+            lineSegments.position.y = meshPos[1] + floatY + 0.02;
+            points.position.y = meshPos[1] + floatY + 0.05;
+
+            // Animate Ashes
             const ashPos = ashGeometry.getAttribute('position');
             for (let i = 0; i < ashCount; i++) {
-                ashPos.setY(i, ashPos.getY(i) + ashVelocities[i]);
-
-                // Reset ash if it goes too high (scaled with camera depth)
-                // Reset ash if it goes too high (scaled with coverage)
-                if (ashPos.getY(i) > 40) {
-                    ashPos.setY(i, -30);
-                    ashPos.setX(i, (Math.random() - 0.5) * (planeSize[0] * 2.5));
+                let y = ashPos.getY(i);
+                y += ashVelocities[i];
+                if (y > 15) {
+                    y = -10;
+                    ashPos.setX(i, (Math.random() - 0.5) * (planeSize[0] * 1.5));
                 }
+                ashPos.setY(i, y);
             }
             ashPos.needsUpdate = true;
-
-            // Removed rotation for static mountain feel
 
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
@@ -157,14 +181,14 @@ const RedGeometricBackground = ({
         // Resize Handling
         const handleResize = () => {
             if (!containerRef.current) return;
-            const width = containerRef.current.offsetWidth;
-            const height = containerRef.current.offsetHeight;
+            const width = window.innerWidth;
+            const height = window.innerHeight;
             camera.aspect = width / height;
             camera.updateProjectionMatrix();
             renderer.setSize(width, height);
         };
         window.addEventListener('resize', handleResize);
-        handleResize(); // Initial call
+        handleResize(); // Initial
 
         // Cleanup
         return () => {
@@ -179,13 +203,14 @@ const RedGeometricBackground = ({
             ashGeometry.dispose();
             ashMaterial.dispose();
         };
-    }, []);
+    }, [height, jaggednessScale, opacity, reverse, planeSize, cameraPos, meshPos, ashCount, ashColor, ashSize]);
 
     return (
         <div
             ref={containerRef}
-            className="absolute inset-0 pointer-events-none z-0 bg-transparent overflow-hidden"
-            style={{ maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)' }}
+            className="fixed inset-0 pointer-events-none z-0 bg-transparent"
+            // Gradient mask to blend bottom into black
+            style={{ maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)' }}
         />
     );
 };

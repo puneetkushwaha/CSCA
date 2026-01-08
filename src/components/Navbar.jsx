@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Shield, ChevronDown, ShoppingCart, User, Globe, Search, Check } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const location = useLocation();
+    const { toggleCart, cartCount } = useCart();
 
     // Region Selector Logic
     const [isRegionOpen, setIsRegionOpen] = useState(false);
@@ -182,13 +184,14 @@ const Navbar = () => {
                                 onMouseLeave={() => setActiveDropdown(null)}
                             >
                                 {link.dropdown ? (
-                                    <button
-                                        className={`flex items-center gap-1 px-3 py-2 text-[11px] font-bold uppercase tracking-wide transition-all duration-300 rounded-lg hover:bg-white/5 cursor-default
-                                            ${activeDropdown === link.name ? 'text-red-500' : 'text-gray-300 hover:text-white'}`}
+                                    <Link
+                                        to={link.path}
+                                        className={`flex items-center gap-1 px-3 py-2 text-[11px] font-bold uppercase tracking-wide transition-all duration-300 rounded-lg hover:bg-white/5 cursor-pointer
+                                            ${activeDropdown === link.name || isActive(link.path) ? 'text-red-500' : 'text-gray-300 hover:text-white'}`}
                                     >
                                         {link.name}
                                         <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180 text-red-500' : 'opacity-50'}`} />
-                                    </button>
+                                    </Link>
                                 ) : (
                                     <Link
                                         to={link.path}
@@ -287,9 +290,16 @@ const Navbar = () => {
                         </div>
 
                         {/* Cart */}
-                        <button className="relative group text-gray-400 hover:text-white transition-colors">
+                        <button
+                            onClick={toggleCart}
+                            className="relative group text-gray-400 hover:text-white transition-colors"
+                        >
                             <ShoppingCart className="w-4 h-4" />
-                            <span className="absolute -top-1.5 -right-1.5 bg-red-600 text-white text-[9px] font-black w-3.5 h-3.5 flex items-center justify-center rounded-full border border-black group-hover:scale-110 transition-transform">1</span>
+                            {cartCount > 0 && (
+                                <span className="absolute -top-1.5 -right-1.5 bg-red-600 text-white text-[9px] font-black w-3.5 h-3.5 flex items-center justify-center rounded-full border border-black group-hover:scale-110 transition-transform">
+                                    {cartCount}
+                                </span>
+                            )}
                         </button>
 
                         {/* Login */}
@@ -316,9 +326,13 @@ const Navbar = () => {
                             <div key={link.name}>
                                 {link.dropdown ? (
                                     <>
-                                        <div className="block px-4 py-3 text-sm font-bold uppercase tracking-wider text-gray-400">
+                                        <Link
+                                            to={link.path}
+                                            onClick={() => setIsOpen(false)}
+                                            className="block px-4 py-3 text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-white transition-colors"
+                                        >
                                             {link.name}
-                                        </div>
+                                        </Link>
                                         <div className="pl-6 space-y-1 pb-2">
                                             {link.dropdown.map((item) => (
                                                 <Link
