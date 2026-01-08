@@ -134,8 +134,8 @@ const Navbar = () => {
                 {/* Desktop Navigation Container */}
                 <div className={`relative px-6 md:px-8 h-12 md:h-16 rounded-[2rem] border transition-all duration-500 w-fit mx-auto flex justify-center items-center gap-8
                     ${isScrolled
-                        ? 'bg-black/80 backdrop-blur-xl border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.8)]'
-                        : 'bg-black/90 backdrop-blur-lg border-white/5'
+                        ? 'bg-black/50 backdrop-blur-xl border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.8)]'
+                        : 'bg-black/20 backdrop-blur-lg border-white/5'
                     }`}>
 
                     {/* Logo Section */}
