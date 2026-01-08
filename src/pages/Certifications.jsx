@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Globe, Cpu, Lock, Database, Terminal, Server, BarChart, ChevronRight, Cloud, ClipboardCheck, Zap, Briefcase, Laptop, Skull, FileSpreadsheet, FileText, Monitor, ClipboardList, ShieldCheck, Award, Users, Target } from 'lucide-react';
+import { Shield, Globe, Cpu, Lock, Database, Terminal, Server, BarChart, ChevronRight, Cloud, ClipboardCheck, Zap, Briefcase, Laptop, Skull, FileSpreadsheet, FileText, Monitor, ClipboardList, ShieldCheck, Award, Users, Target, BookOpen } from 'lucide-react';
 import RedGeometricBackground from '../components/RedGeometricBackground';
 
 const Certifications = () => {
@@ -15,7 +15,7 @@ const Certifications = () => {
             id: 'security-plus',
             title: 'Security+',
             code: 'SEC+',
-            level: 'Core',
+            level: 'Security Analyst',
             description: "CompTIA Security+ is the most trusted entry into cybersecurity, proving you have real-world, hands-on skills to protect networks, apps, and data. It’s vendor-neutral, globally recognized, and built to help you launch and grow a lasting security career.",
             category: 'Cyber',
             icon: <Shield className="w-8 h-8 text-white" />,
@@ -35,11 +35,11 @@ const Certifications = () => {
         },
         {
             id: 'a-plus',
-            title: 'A+',
+            title: 'a+ Cyber',
             code: 'A+',
-            level: 'Core',
-            description: "CompTIA A+ is the starting point for your IT career. Covering hardware, software, networking, troubleshooting, and security, A+ validates the skills employers need most. Updated for today’s tech, the Core 1 & 2 exams prepare you for IT support and help desk roles worldwide.",
-            category: 'Tech Support',
+            level: 'Security Analyst',
+            description: "CompTIA A+ is the starting point for your IT career. Covering hardware, software, networking, troubleshooting, and basic security skills required for cybersecurity roles.",
+            category: 'Cyber',
             icon: <Cpu className="w-8 h-8 text-white" />,
             color: 'from-orange-600 to-orange-900'
         },
@@ -47,7 +47,7 @@ const Certifications = () => {
             id: 'cysa',
             title: 'CySA+',
             code: 'CySA+',
-            level: 'Intermediate',
+            level: 'Security Analyst',
             description: "CompTIA CySA+ proves you can detect, analyze, and stop threats in real time. From vulnerability management to incident response, it builds the skills SOCs rely on daily, making you the bridge between security tools, data, and actionable defense.",
             category: 'Cyber',
             icon: <Lock className="w-8 h-8 text-white" />,
@@ -87,7 +87,7 @@ const Certifications = () => {
             id: 'pentest-plus',
             title: 'PenTest+',
             code: 'PEN+',
-            level: 'Intermediate',
+            level: 'Penetration & Vulnerability Testers & Analyst',
             description: "CompTIA PenTest+ proves you can think like an attacker to strengthen defenses. Covering cloud, web apps, APIs, and IoT, it validates hands-on skills across the full penetration testing process, preparing you to uncover risks and deliver actionable security insights.",
             category: 'Cyber',
             icon: <Server className="w-8 h-8 text-white" />,
@@ -117,7 +117,7 @@ const Certifications = () => {
             id: 'ai-essentials',
             title: 'AI Essentials',
             code: 'AIE',
-            level: 'Entry',
+            level: 'Career Builder',
             description: "Master the fundamentals of Artificial Intelligence. Learn how AI works, its impact on business, and how to use AI tools effectively to boost productivity and innovation.",
             category: 'AI',
             icon: <Cpu className="w-8 h-8 text-white" />,
@@ -125,9 +125,9 @@ const Certifications = () => {
         },
         {
             id: 'ai-marketing',
-            title: 'AI for Marketing',
+            title: 'AI for Marketing Essentials',
             code: 'AIM',
-            level: 'Pro',
+            level: 'Career Builder',
             description: "Leverage AI to revolutionize your marketing strategies. Learn to generate content, analyze customer data, and optimize campaigns using cutting-edge AI tools.",
             category: 'AI',
             icon: <BarChart className="w-8 h-8 text-white" />,
@@ -135,9 +135,9 @@ const Certifications = () => {
         },
         {
             id: 'ai-sales',
-            title: 'AI for Sales',
+            title: 'AI for Sales Essentials',
             code: 'AIS',
-            level: 'Pro',
+            level: 'Career Builder',
             description: "Transform your sales process with AI. specific techniques for lead scoring, personalized outreach, and automated follow-ups that drive revenue growth.",
             category: 'AI',
             icon: <Target className="w-8 h-8 text-white" />,
@@ -145,9 +145,9 @@ const Certifications = () => {
         },
         {
             id: 'ai-prompting',
-            title: 'AI Prompting',
+            title: 'AI Prompting Essentials',
             code: 'AIP',
-            level: 'Skill',
+            level: 'Career Builder',
             description: "Become a power user of Generative AI. Learn the art and science of prompt engineering to get the best results from tools like ChatGPT, Claude, and Midjourney.",
             category: 'AI',
             icon: <Terminal className="w-8 h-8 text-white" />,
@@ -207,7 +207,7 @@ const Certifications = () => {
             id: 'cyberdefense-pro',
             title: 'CyberDefense Pro',
             code: 'CDP',
-            level: 'Pro',
+            level: 'Security Analyst',
             description: "Advanced defensive tactical skills. Go beyond theory with hands-on labs in blue teaming, SOC operations, and active defense strategies.",
             category: 'Cyber',
             icon: <Shield className="w-8 h-8 text-white" />,
@@ -257,7 +257,7 @@ const Certifications = () => {
             id: 'ethical-hacker-pro',
             title: 'Ethical Hacker Pro',
             code: 'EHP',
-            level: 'Pro',
+            level: 'Cybersecurity Manager',
             description: "Practical offensive security skills. Master the tools and techniques used by white hat hackers to test and secure systems.",
             category: 'Cyber',
             icon: <Skull className="w-8 h-8 text-white" />,
@@ -355,9 +355,9 @@ const Certifications = () => {
         },
         {
             id: 'secai-plus',
-            title: 'SecAI+',
+            title: 'SecAI+ (Pre-Order Now)',
             code: 'SAI+',
-            level: 'Adv',
+            level: 'Security Engineer',
             description: "Securing Artificial Intelligence. Protecting AI models, data pipelines, and infrastructure from adversarial attacks.",
             category: 'Cyber',
             icon: <ShieldCheck className="w-8 h-8 text-white" />,
@@ -365,9 +365,9 @@ const Certifications = () => {
         },
         {
             id: 'secot-plus',
-            title: 'SecOT+',
+            title: 'SecOT+ (Coming Nov 2026)',
             code: 'SOT+',
-            level: 'Adv',
+            level: 'Security Engineer',
             description: "Operational Technology Security. Securing industrial control systems, SCADA, and IoT environments.",
             category: 'Cyber',
             icon: <Lock className="w-8 h-8 text-white" />,
@@ -377,7 +377,7 @@ const Certifications = () => {
             id: 'security-pro',
             title: 'Security Pro',
             code: 'SPRO',
-            level: 'Pro',
+            level: 'Security Analyst',
             description: "Advanced security practitioner skills. Comprehensive coverage of defensive and offensive security principles.",
             category: 'Cyber',
             icon: <Shield className="w-8 h-8 text-white" />,
@@ -387,7 +387,7 @@ const Certifications = () => {
             id: 'securityx',
             title: 'SecurityX',
             code: 'SX',
-            level: 'Expert',
+            level: 'Security Architect',
             description: "The pinnacle of security certification. Advanced architecture, strategy, and leadership for C-suite and lead architects.",
             category: 'Cyber',
             icon: <Award className="w-8 h-8 text-white" />,
@@ -422,6 +422,26 @@ const Certifications = () => {
             category: 'Tech Support',
             icon: <Laptop className="w-8 h-8 text-white" />,
             color: 'from-blue-500 to-blue-700'
+        },
+        {
+            id: 'certification-kit',
+            title: 'Certification Kit',
+            code: 'KIT',
+            level: 'Certification-Related Job Roles',
+            description: "Official CompTIA Certification Kits provide you with the learning resources you need to prepare for exams.",
+            category: 'Cyber',
+            icon: <Briefcase className="w-8 h-8 text-white" />,
+            color: 'from-slate-600 to-slate-900'
+        },
+        {
+            id: 'ce-program',
+            title: 'Continuing Education',
+            code: 'CE',
+            level: 'Certification-Related Job Roles',
+            description: "Keep your certification up to date with CompTIA's Continuing Education (CE) program.",
+            category: 'Cyber',
+            icon: <BookOpen className="w-8 h-8 text-white" />,
+            color: 'from-blue-800 to-blue-950'
         }
     ];
 
@@ -542,7 +562,7 @@ const Certifications = () => {
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                                    {certifications.map((cert) => (
+                                    {certifications.slice(0, 10).map((cert) => (
                                         <div
                                             key={cert.id}
                                             className="group relative bg-[#050505] border border-white/10 rounded-[2rem] overflow-hidden hover:border-white/20 transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,0,0,0.8)] flex flex-col"
