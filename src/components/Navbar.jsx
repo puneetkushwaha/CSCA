@@ -115,10 +115,35 @@ const Navbar = () => {
         },
         { name: 'Certifications', path: '/certifications' },
         { name: 'Enterprise', path: '/corporate-training' },
-        { name: 'Government', path: '/government' },
+        {
+            name: 'Government',
+            path: '/government',
+            dropdown: [
+                { name: 'State & Local', path: '/government/state-local' },
+                { name: 'Federal', path: '/government/federal' }
+            ]
+        },
         { name: 'Partner', path: '/partners-ecosystem' },
-        { name: 'Academic', path: '/programs' },
-        { name: 'Resources', path: '/resources' },
+        {
+            name: 'Academic',
+            path: '/programs',
+            dropdown: [
+                { name: 'Higher Education', path: '/academic/higher-education' },
+                { name: 'Secondary Education', path: '/academic/secondary-education' },
+                { name: 'Instructors', path: '/academic/instructors' },
+                { name: 'Students', path: '/academic/students' }
+            ]
+        },
+        {
+            name: 'Resources',
+            path: '/resources',
+            dropdown: [
+                { name: 'Blog', path: '/resources/blog' },
+                { name: 'Research', path: '/resources/research' },
+                { name: 'Case Studies', path: '/resources/case-studies' },
+                { name: 'View All Resources', path: '/resources' }
+            ]
+        },
         { name: 'Shop', path: '/pricing' },
     ];
 
