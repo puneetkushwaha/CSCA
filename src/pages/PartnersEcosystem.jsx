@@ -170,12 +170,12 @@ const PartnersEcosystem = () => {
                       Offer Client Proctored Exams
                     </p>
                     <h3 className="text-2xl font-bold mb-4 text-white">
-                      CompTIA Client Proctor Test Delivery System
+                      CSCA Client Proctor Test Delivery System
                     </h3>
                     <p className="text-gray-400 mb-6">
-                      The CompTIA Client Proctor Test Delivery System provides a
+                      The CSCA Client Proctor Test Delivery System provides a
                       streamlined and convenient solution for delivering select
-                      CompTIA certification exams.
+                      CSCA certification exams.
                     </p>
                     <button className="bg-[#d71f28] text-white font-semibold px-6 py-3 rounded-full hover:scale-105 transition-transform">
                       Learn more
@@ -195,7 +195,7 @@ const PartnersEcosystem = () => {
                       Career Pathways
                     </h2>
                     <p className="text-gray-300 mb-4">
-                      CompTIA's career pathways provide a comprehensive and
+                      CSCA's career pathways provide a comprehensive and
                       structured approach to IT education, guiding students from
                       foundational knowledge to advanced expertise.
                     </p>
@@ -217,7 +217,7 @@ const PartnersEcosystem = () => {
               <section className="mt-16">
                 <h2 className="text-4xl font-extrabold text-center mb-12">
                   Unlock the value of partnering with{" "}
-                  <span className="text-red-500">CompTIA</span>
+                  <span className="text-red-500">CSCA</span>
                 </h2>
                 <div className="grid md:grid-cols-3 gap-8">
                   {/* Card 1 */}
@@ -243,7 +243,7 @@ const PartnersEcosystem = () => {
                       className="w-full h-44 object-cover rounded-lg mb-4"
                     />
                     <h3 className="text-xl font-bold mb-2 text-white">
-                      The Value of CompTIA Authorized Partners
+                      The Value of CSCA Authorized Partners
                     </h3>
                     <span className="text-sm border rounded px-3 py-1 border-white/20 text-gray-300">
                       Partner

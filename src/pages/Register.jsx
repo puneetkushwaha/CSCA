@@ -1,32 +1,42 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Shield, Lock, Mail, User, ArrowRight, Loader2, Eye, EyeOff, Facebook, Linkedin, Apple, Globe } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Shield, Eye, EyeOff, Mail, Loader2, Facebook, Linkedin } from 'lucide-react';
 import RedGeometricBackground from '../components/RedGeometricBackground';
 
 const Register = () => {
-    const [isLoading, setIsLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         email: '',
-        password: ''
+        password: '',
     });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
         // Simulate API call
-        setTimeout(() => setIsLoading(false), 2000);
+        setTimeout(() => {
+            setIsLoading(false);
+            navigate('/login');
+        }, 1500);
     };
 
     return (
-        // Changed to h-screen and overflow-hidden to prevent body scroll
-        // Content container handles scrolling
-        <div className="h-screen w-screen relative bg-black font-['Inter'] overflow-hidden flex flex-col">
+        // Fixed Viewport Wrapper
+        <div className="h-screen w-screen relative font-['Inter'] overflow-hidden flex flex-col">
 
-            {/* Background is Fixed */}
-            <RedGeometricBackground />
+            {/* Background Layer */}
+            <RedGeometricBackground
+                height={30}
+                jaggednessScale={2.5}
+                opacity={0.4}
+                planeSize={[60, 40]}
+                cameraPos={[0, 0, 15]}
+                ashCount={200}
+            />
 
             {/* Main Scrollable Area */}
             <div className="relative z-10 w-full h-full overflow-y-auto overflow-x-hidden p-6">
@@ -166,7 +176,7 @@ const Register = () => {
                                 </button>
 
                                 <button className="flex items-center justify-center p-3 border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/50 transition-all group">
-                                    <Apple className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+                                    <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z" /></svg>
                                 </button>
                             </div>
 
