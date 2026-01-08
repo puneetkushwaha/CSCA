@@ -15,6 +15,50 @@ const CertificationDetail = () => {
     }, [id]);
 
     const certData = {
+        'cysa': {
+            id: 'CS0-003',
+            title: 'CySA+',
+            subtitle: 'CompTIA Cybersecurity Analyst',
+            description: "CompTIA Cybersecurity Analyst (CySA+) is the premier certification for cyber professionals tasked with incident detection, prevention, and response through continuous security monitoring. It validates a tech professional's expertise in incident response and vulnerability management processes, emphasizing the critical communication skills necessary for effective security analysis and compliance.",
+            price: '$392.00',
+            currency: 'USD',
+            level: 'Intermediate',
+            experience: '4+ Years Recommended',
+            time: '165 Minutes',
+            access: 'Lifetime Certification',
+            role: 'Security Analyst',
+            stats: {
+                students: '30,000+',
+                countries: 'Global',
+                community: 'CompTIA'
+            },
+            skills: [
+                'Security Operations', 'Threat Hunting', 'Vulnerability Management',
+                'Incident Response', 'Threat Intelligence', 'Compliance',
+                'Application Security', 'Digital Forensics', 'Log Analysis'
+            ],
+            modules: [
+                { title: 'Security Operations', desc: 'System & network architecture, malicious activity indicators, tools & techniques (33%)' },
+                { title: 'Vulnerability Management', desc: 'Scanning, prioritization, mitigation controls, and response (30%)' },
+                { title: 'Incident Response Management', desc: 'Attack methodologies, detection, analysis, containment, and recovery (20%)' },
+                { title: 'Reporting & Communication', desc: 'Compliance reporting, metrics, KPIs, and stakeholder communication (17%)' }
+            ],
+            examDetails: {
+                version: 'V3 (CS0-003)',
+                launchDate: 'June 6, 2023',
+                questions: 'Max 85 (Multiple choice & Performance-based)',
+                passingScore: '750 (Scale of 100-900)',
+                languages: 'English, Japanese, Portuguese, Spanish',
+                retirement: 'Estimated 2026'
+            },
+            dodRoles: [
+                'All Source Analyst', 'Warning Analyst', 'Forensics Analyst',
+                'Cyber Defense Forensics Analyst', 'Cyber Crime Investigator',
+                'Systems Security Analyst', 'Cyber Defense Analyst',
+                'Cyber Defense Incident Responder', 'Vulnerability Assessment Analyst',
+                'Security Control Assessor'
+            ]
+        },
         'btl1': {
             id: 'BTL1',
             title: 'BLUE TEAM LEVEL 1',
@@ -95,7 +139,8 @@ const CertificationDetail = () => {
         }
     };
 
-    const cert = certData[id?.toLowerCase()] || certData['btl1'];
+    // Default to 'cysa' if ID not found, ensuring new content is visible
+    const cert = certData[id?.toLowerCase()] || certData['cysa'];
 
     return (
         <div className="min-h-screen bg-black text-white selection:bg-red-500/30 font-['Inter'] relative">
@@ -128,9 +173,12 @@ const CertificationDetail = () => {
                         {cert.subtitle}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 lg:hidden justify-center">
-                        {/* Mobile Actions could go here */}
-                    </div>
+                    {cert.examDetails && (
+                        <div className="flex flex-wrap gap-4 lg:hidden justify-center text-xs font-bold text-gray-500">
+                            <span className="bg-white/5 px-3 py-1 rounded">Code: {cert.id}</span>
+                            <span className="bg-white/5 px-3 py-1 rounded">Ver: {cert.examDetails.version}</span>
+                        </div>
+                    )}
                 </div>
             </div>
 
@@ -152,18 +200,37 @@ const CertificationDetail = () => {
                             </p>
 
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-12 border-t border-white/5">
-                                <div>
-                                    <div className="text-3xl font-black text-white mb-1">{cert.stats.students}</div>
-                                    <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Students Certified</div>
-                                </div>
-                                <div>
-                                    <div className="text-3xl font-black text-white mb-1">{cert.stats.countries}</div>
-                                    <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Countries</div>
-                                </div>
-                                <div className="col-span-2 md:col-span-2">
-                                    <div className="text-3xl font-black text-white mb-1">{cert.stats.community}</div>
-                                    <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Community Members</div>
-                                </div>
+                                {cert.examDetails ? (
+                                    <>
+                                        <div>
+                                            <div className="text-2xl font-black text-white mb-1">{cert.examDetails.passingScore.split(' ')[0]}</div>
+                                            <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Passing Score</div>
+                                        </div>
+                                        <div>
+                                            <div className="text-2xl font-black text-white mb-1">{cert.time.split(' ')[0]}</div>
+                                            <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Duration (Mins)</div>
+                                        </div>
+                                        <div className="col-span-2">
+                                            <div className="text-xl font-black text-white mb-1">{cert.examDetails.questions.split(' ')[1]}</div>
+                                            <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Max Questions</div>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <div>
+                                            <div className="text-3xl font-black text-white mb-1">{cert.stats.students}</div>
+                                            <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Students Certified</div>
+                                        </div>
+                                        <div>
+                                            <div className="text-3xl font-black text-white mb-1">{cert.stats.countries}</div>
+                                            <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Countries</div>
+                                        </div>
+                                        <div className="col-span-2 md:col-span-2">
+                                            <div className="text-3xl font-black text-white mb-1">{cert.stats.community}</div>
+                                            <div className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Community Members</div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </section>
 
@@ -171,7 +238,7 @@ const CertificationDetail = () => {
                         <section className="animate-in slide-in-from-bottom-8 duration-700 delay-200">
                             <h2 className="text-sm font-black text-red-600 uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
                                 <span className="w-8 h-[1px] bg-red-600"></span>
-                                Skills You'll Gain
+                                Skills You'll Learn
                             </h2>
                             <div className="flex flex-wrap gap-3">
                                 {cert.skills.map((skill, i) => (
@@ -182,11 +249,11 @@ const CertificationDetail = () => {
                             </div>
                         </section>
 
-                        {/* Modules */}
+                        {/* Syllabus / Objectives */}
                         <section className="animate-in slide-in-from-bottom-8 duration-700 delay-300">
                             <h2 className="text-sm font-black text-red-600 uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
                                 <span className="w-8 h-[1px] bg-red-600"></span>
-                                Course Syllabus
+                                {cert.examDetails ? 'Exam Objectives' : 'Course Syllabus'}
                             </h2>
                             <div className="grid gap-4">
                                 {cert.modules.map((mod, i) => (
@@ -203,30 +270,77 @@ const CertificationDetail = () => {
                             </div>
                         </section>
 
-                        {/* Career Mapping */}
+                        {/* Exam Details (Specifically for CySA+) */}
+                        {cert.examDetails && (
+                            <section className="animate-in slide-in-from-bottom-8 duration-700 delay-300">
+                                <h2 className="text-sm font-black text-red-600 uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
+                                    <span className="w-8 h-[1px] bg-red-600"></span>
+                                    Exam Specifications
+                                </h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                                        <h4 className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2">Exam Code</h4>
+                                        <p className="text-white font-bold">{cert.id}</p>
+                                    </div>
+                                    <div className="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                                        <h4 className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2">Launch Date</h4>
+                                        <p className="text-white font-bold">{cert.examDetails.launchDate}</p>
+                                    </div>
+                                    <div className="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                                        <h4 className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2">Languages</h4>
+                                        <p className="text-white font-bold">{cert.examDetails.languages}</p>
+                                    </div>
+                                    <div className="p-6 bg-white/[0.02] border border-white/5 rounded-xl">
+                                        <h4 className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2">Retirement</h4>
+                                        <p className="text-white font-bold">{cert.examDetails.retirement}</p>
+                                    </div>
+                                </div>
+                            </section>
+                        )}
+
+                        {/* Career Mapping / DoD Roles */}
                         <section className="animate-in slide-in-from-bottom-8 duration-700 delay-300">
                             <h2 className="text-sm font-black text-red-600 uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
                                 <span className="w-8 h-[1px] bg-red-600"></span>
                                 Career Mapping
                             </h2>
-                            <div className="p-8 bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 rounded-2xl relative overflow-hidden">
-                                <div className="absolute top-0 right-0 p-4 opacity-20">
-                                    <Briefcase className="w-24 h-24 text-white" />
-                                </div>
-                                <div className="relative z-10">
-                                    <div className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-2">NICE Framework Mapping</div>
-                                    <div className="text-2xl font-black text-white uppercase tracking-tight mb-8">{cert.niceMapping.role}</div>
 
-                                    <div className="grid grid-cols-3 gap-4">
-                                        {cert.niceMapping.distribution.map((item, i) => (
-                                            <div key={i} className="bg-black/40 p-4 rounded-xl border border-white/5 text-center">
-                                                <div className="text-xl font-black text-red-500">{item.val}</div>
-                                                <div className="text-[8px] uppercase tracking-widest text-white/40 mt-1">{item.name}</div>
-                                            </div>
-                                        ))}
+                            {cert.dodRoles ? (
+                                <div className="p-8 bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 rounded-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 p-4 opacity-20">
+                                        <Briefcase className="w-24 h-24 text-white" />
+                                    </div>
+                                    <div className="relative z-10">
+                                        <div className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-4">DoD 8140 Work Roles</div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {cert.dodRoles.map((role, i) => (
+                                                <span key={i} className="px-3 py-1.5 bg-black/40 border border-white/10 text-white/70 text-[10px] font-bold uppercase tracking-wide rounded hover:text-white transition-colors">
+                                                    {role}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            ) : (
+                                <div className="p-8 bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 rounded-2xl relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 p-4 opacity-20">
+                                        <Briefcase className="w-24 h-24 text-white" />
+                                    </div>
+                                    <div className="relative z-10">
+                                        <div className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold mb-2">NICE Framework Mapping</div>
+                                        <div className="text-2xl font-black text-white uppercase tracking-tight mb-8">{cert.niceMapping?.role}</div>
+
+                                        <div className="grid grid-cols-3 gap-4">
+                                            {cert.niceMapping?.distribution.map((item, i) => (
+                                                <div key={i} className="bg-black/40 p-4 rounded-xl border border-white/5 text-center">
+                                                    <div className="text-xl font-black text-red-500">{item.val}</div>
+                                                    <div className="text-[8px] uppercase tracking-widest text-white/40 mt-1">{item.name}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </section>
 
                     </div>
@@ -247,7 +361,7 @@ const CertificationDetail = () => {
                                     <div className="text-[10px] text-red-500 font-bold uppercase tracking-wider mb-8">One-time payment • Lifetime access</div>
 
                                     <button className="w-full py-4 bg-white text-black font-black uppercase tracking-[0.2em] text-xs hover:bg-red-600 hover:text-white transition-all duration-300 rounded-lg shadow-lg hover:shadow-red-900/50 mb-4 flex items-center justify-center gap-2 group/btn">
-                                        Enroll Now
+                                        {cert.examDetails ? 'Buy Bundle' : 'Enroll Now'}
                                         <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                                     </button>
 

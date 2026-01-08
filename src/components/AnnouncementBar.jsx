@@ -1,24 +1,24 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const AnnouncementBar = () => {
     return (
-        <a
-            href="/certifications"
-            className="block bg-black border-b border-white/10 py-2.5 transition-colors duration-300 group relative z-50"
-        >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-center gap-2 text-center">
-                    <p className="text-xs sm:text-sm font-medium text-white group-hover:text-red-500 transition-colors duration-300 flex items-center gap-2">
-                        <span className="inline-flex items-center px-1.5 py-0.5 rounded-sm bg-white text-black text-[10px] font-bold uppercase tracking-tight group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
-                            New
+        <div className="bg-black border-b border-white/10 relative z-[60]">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+                <div className="flex h-10 items-center justify-center">
+                    <a
+                        href="/certifications/certified-junior-detection-engineer"
+                        className="group flex items-center justify-center gap-3 text-xs md:text-sm font-medium text-gray-300 hover:text-white transition-colors w-full"
+                    >
+                        <span className="bg-red-600 text-white px-1.5 py-0.5 rounded-[2px] font-bold tracking-wider text-[9px] group-hover:bg-white group-hover:text-red-600 transition-colors">NEW</span>
+                        <span className="truncate">
+                            New certification alert! <span className="font-bold text-white ml-1">Certified Junior Detection Engineer</span> has arrived. Find out more.
                         </span>
-                        New certification alert! Certified Junior Detection Engineer has arrived. Find out more.
-                        <ArrowRight className="h-3 w-3 inline-block" />
-                    </p>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-red-600" />
+                    </a>
                 </div>
             </div>
-        </a>
+        </div>
     );
 };
 

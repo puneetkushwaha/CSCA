@@ -18,6 +18,10 @@ import Resources from './pages/Resources';
 import PartnersEcosystem from './pages/PartnersEcosystem';
 import Accreditation from './pages/Accreditation';
 import CareerOpportunities from './pages/CareerOpportunities';
+import ExploreIndustries from './pages/ExploreIndustries';
+import ExploreTechCareers from './pages/ExploreTechCareers';
+import CareersPlus from './pages/CareersPlus';
+import TechCareerDetail from './pages/TechCareerDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
@@ -71,6 +75,10 @@ function App() {
           <Route path="/certificate-verification" element={<CertificateVerification />} />
           <Route path="/digital-badges" element={<DigitalBadges />} />
           <Route path="/career-opportunities" element={<CareerOpportunities />} />
+          <Route path="/explore-industries" element={<ExploreIndustries />} />
+          <Route path="/explore-tech-careers" element={<ExploreTechCareers />} />
+          <Route path="/careers-plus" element={<CareersPlus />} />
+          <Route path="/explore-tech-careers/:careerId" element={<TechCareerDetail />} />
           <Route path="/partners-ecosystem" element={<PartnersEcosystem />} />
           <Route path="/accreditation" element={<Accreditation />} />
 

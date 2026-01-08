@@ -149,12 +149,7 @@ const Home = () => {
           </div>
         </div>
 
-        <style jsx>{`
-          .stroke-text-red {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-            color: transparent;
-          }
-        `}</style>
+
       </section>
 
       {/* Compact Contact / CTA Section */}
