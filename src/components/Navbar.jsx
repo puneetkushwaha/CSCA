@@ -117,15 +117,6 @@ const Navbar = () => {
         },
         { name: 'Certifications', path: '/certifications' },
         { name: 'Enterprise', path: '/enterprise' },
-        {
-            name: 'Government',
-            path: '/government',
-            dropdown: [
-                { name: 'Overview', path: '/government' },
-                { name: 'Central Government', path: '/government/central' },
-                { name: 'State Government', path: '/government/state' }
-            ]
-        },
         { name: 'Partner', path: '/partners-ecosystem' },
         {
             name: 'Academic',

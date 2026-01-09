@@ -185,7 +185,9 @@ const RedGeometricBackground = ({
         <div
             ref={containerRef}
             className="absolute inset-0 pointer-events-none z-0 bg-transparent overflow-hidden"
-            style={{ maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)' }}
+            style={{
+                maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)'
+            }}
         />
     );
 };

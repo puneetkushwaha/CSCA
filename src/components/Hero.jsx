@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ShieldCheck, Globe, Terminal } from 'lucide-react';
+import { ShieldCheck, Globe, Terminal } from 'lucide-react';
 import RedGeometricBackground from './RedGeometricBackground';
 
 const Hero = () => {
@@ -62,19 +62,25 @@ const Hero = () => {
                         {/* Top Line */}
                         <div className="w-full h-px bg-red-600/40 mb-6"></div>
 
-                        <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold text-white leading-tight tracking-tight mb-6 uppercase">
-                            Practical <br />
-                            <span className="text-outline-red block my-2 leading-[1.1]">
-                                Cybersecurity Training
+                        <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] font-extrabold text-white leading-[1.15] tracking-tight mb-5 uppercase">
+                            <span className="block mb-1">Codevirus</span>
+                            <span className="block mb-1.5">Security</span>
+                            <span className="text-outline-red block mb-2 leading-[1.1]">
+                                Certification Authority
                             </span>
-                            For Every Level.
+                            <span className="block mt-1.5 font-black text-2xl md:text-3xl">(CSCA)</span>
                         </h1>
 
-                        {/* Middle Line */}
-                        <div className="w-full h-px bg-red-600/40 mb-10"></div>
+                        <p className="text-sm md:text-base text-red-500 font-bold uppercase tracking-tight mb-6">
+                            Secure your skills with globally recognized cybersecurity credentials.
+                        </p>
 
-                        <p className="text-[11px] md:text-sm text-white/70 mb-0 max-w-xl leading-loose uppercase tracking-[0.2em] font-bold">
-                            Our practical cyber defense training has developed the skills of thousands of aspiring or established security professionals around the world.
+                        {/* Middle Line */}
+                        <div className="w-full h-px bg-red-600/40 mb-6"></div>
+
+                        <p className="text-sm md:text-base text-white/70 max-w-xl leading-relaxed">
+                            Trusted cybersecurity certifications and industry-aligned training, <br />
+                            backed by real-world assessments and hands-on labs.
                         </p>
                     </div>
 

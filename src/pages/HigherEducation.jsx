@@ -216,23 +216,24 @@ const HigherEducation = () => {
 
             {/* Meet With Us */}
             <section
-              className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(90deg, #d71f28 0%, #9b1f4d 50%, #6a2a9b 100%)",
-              }}
-            >
-              <div className="max-w-3xl mx-auto px-6">
-                <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
-                <p className="text-lg mb-8 text-white/90">
-                  Request instructor access and see how CSCA can support your
-                  institution in empowering students and advancing tech education.
-                </p>
-                <button className="bg-white text-[#9b1f4d] font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
-                  Learn more
-                </button>
-              </div>
-            </section>
+  className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(90deg, #000000 0%, #000000 15%, #ff0000 50%, #000000 85%, #000000 100%)",
+  }}
+>
+  <div className="max-w-3xl mx-auto px-6">
+    <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
+    <p className="text-lg mb-8 text-white/90">
+      Request instructor access and see how CSCA can support your institution in
+      empowering students and advancing tech education.
+    </p>
+    <button className="bg-white text-red-600 font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
+      Learn more
+    </button>
+  </div>
+</section>
+
           </>
         )}
 
@@ -337,23 +338,24 @@ const HigherEducation = () => {
 
             {/* Meet With Us CTA */}
             <section
-              className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(90deg, #d71f28 0%, #9b1f4d 50%, #6a2a9b 100%)",
-              }}
-            >
-              <div className="max-w-3xl mx-auto px-6">
-                <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
-                <p className="text-lg mb-8 text-white/90">
-                  Request instructor access and see how CSCA can support your
-                  institution in advancing education and empowering students.
-                </p>
-                <button className="bg-white text-[#9b1f4d] font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
-                  Learn more
-                </button>
-              </div>
-            </section>
+  className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(90deg, #000000 0%, #000000 15%, #ff0000 50%, #000000 85%, #000000 100%)",
+  }}
+>
+  <div className="max-w-3xl mx-auto px-6">
+    <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
+    <p className="text-lg mb-8 text-white/90">
+      Request instructor access and see how CSCA can support your institution in
+      empowering students and advancing tech education.
+    </p>
+    <button className="bg-white text-red-600 font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
+      Learn more
+    </button>
+  </div>
+</section>
+
           </>
         )}
 
@@ -503,22 +505,24 @@ const HigherEducation = () => {
 
             {/* Meet With Us CTA */}
             <section
-              className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(90deg, #d71f28 0%, #9b1f4d 50%, #6a2a9b 100%)",
-              }}
-            >
-              <div className="max-w-3xl mx-auto px-6">
-                <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
-                <p className="text-lg mb-8 text-white/90">
-                  Request instructor access and see how CSCA can support your institution in advancing education and empowering students.
-                </p>
-                <button className="bg-white text-[#9b1f4d] font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
-                  Learn more
-                </button>
-              </div>
-            </section>
+  className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(90deg, #000000 0%, #000000 15%, #ff0000 50%, #000000 85%, #000000 100%)",
+  }}
+>
+  <div className="max-w-3xl mx-auto px-6">
+    <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
+    <p className="text-lg mb-8 text-white/90">
+      Request instructor access and see how CSCA can support your institution in
+      empowering students and advancing tech education.
+    </p>
+    <button className="bg-white text-red-600 font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
+      Learn more
+    </button>
+  </div>
+</section>
+
           </>
         )}
 
@@ -624,23 +628,24 @@ const HigherEducation = () => {
 
             {/* Meet With Us CTA */}
             <section
-              className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(90deg, #d71f28 0%, #9b1f4d 50%, #6a2a9b 100%)",
-              }}
-            >
-              <div className="max-w-3xl mx-auto px-6">
-                <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
-                <p className="text-lg mb-8 text-white/90">
-                  Request instructor access and see how CSCA can support your institution
-                  in empowering students and advancing education.
-                </p>
-                <button className="bg-white text-[#9b1f4d] font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
-                  Learn more
-                </button>
-              </div>
-            </section>
+  className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(90deg, #000000 0%, #000000 15%, #ff0000 50%, #000000 85%, #000000 100%)",
+  }}
+>
+  <div className="max-w-3xl mx-auto px-6">
+    <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
+    <p className="text-lg mb-8 text-white/90">
+      Request instructor access and see how CSCA can support your institution in
+      empowering students and advancing tech education.
+    </p>
+    <button className="bg-white text-red-600 font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
+      Learn more
+    </button>
+  </div>
+</section>
+
           </>
         )}
 
@@ -802,22 +807,24 @@ const HigherEducation = () => {
 
             {/* ---------------- Meet With Us CTA ---------------- */}
             <section
-              className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(90deg, black 0%, red 50%, black 100%)",
-              }}
-            >
-              <div className="max-w-3xl mx-auto px-6">
-                <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
-                <p className="text-lg mb-8 text-white/90">
-                  Request instructor access and see how CompTIA can support your institution.
-                </p>
-                <button className="bg-white text-[#9b1f4d] font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
-                  Learn more
-                </button>
-              </div>
-            </section>
+  className="relative py-20 text-center text-white rounded-2xl overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(90deg, #000000 0%, #000000 15%, #ff0000 50%, #000000 85%, #000000 100%)",
+  }}
+>
+  <div className="max-w-3xl mx-auto px-6">
+    <h2 className="text-4xl font-bold mb-4">Meet with us</h2>
+    <p className="text-lg mb-8 text-white/90">
+      Request instructor access and see how CSCA can support your institution in
+      empowering students and advancing tech education.
+    </p>
+    <button className="bg-white text-red-600 font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
+      Learn more
+    </button>
+  </div>
+</section>
+
           </>
         )}
 
