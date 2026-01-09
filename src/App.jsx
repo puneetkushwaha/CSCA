@@ -32,6 +32,14 @@ import Pricing from './pages/Pricing';
 import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import HigherEducation from './pages/HigherEducation';
+import SecondaryEducation from './pages/SecondaryEducation';
+import Instructors from './pages/Instructors';
+import Students from './pages/Students';
+import Enterprise from './pages/Enterprise';
+import Government from './pages/Government';
+import StateGovernment from './pages/StateGovernment';
+import CentralGovernment from './pages/CentralGovernment';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -92,6 +100,15 @@ function App() {
             <Route path="/explore-tech-careers/:careerId" element={<TechCareerDetail />} />
             <Route path="/partners-ecosystem" element={<PartnersEcosystem />} />
             <Route path="/accreditation" element={<Accreditation />} />
+            {/* Academic Routes */}
+            <Route path="/academic/higher-education" element={<HigherEducation />} />
+            <Route path="/academic/secondary-education" element={<SecondaryEducation />} />
+            <Route path="/academic/instructors" element={<Instructors />} />
+            <Route path="/academic/students" element={<Students />} />
+            <Route path="/enterprise" element={<Enterprise />} />
+            <Route path="/government" element={<Government />} />
+            <Route path="/government/state" element={<StateGovernment />} />
+            <Route path="/government/central" element={<CentralGovernment />} />
 
             <Route path="/corporate-training" element={<CorporateTraining />} />
             <Route path="/resources" element={<Resources />} />

@@ -116,13 +116,14 @@ const Navbar = () => {
             ]
         },
         { name: 'Certifications', path: '/certifications' },
-        { name: 'Enterprise', path: '/corporate-training' },
+        { name: 'Enterprise', path: '/enterprise' },
         {
             name: 'Government',
             path: '/government',
             dropdown: [
-                { name: 'State & Local', path: '/government/state-local' },
-                { name: 'Federal', path: '/government/federal' }
+                { name: 'Overview', path: '/government' },
+                { name: 'Central Government', path: '/government/central' },
+                { name: 'State Government', path: '/government/state' }
             ]
         },
         { name: 'Partner', path: '/partners-ecosystem' },
@@ -320,7 +321,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Dropdown */}
             {isOpen && (
-                <div className="xl:hidden mt-2 mx-4 bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2">
+                <div className="xl:hidden mt-2 mx-4 bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl overflow-y-auto max-h-[85vh] animate-in fade-in slide-in-from-top-2">
                     <div className="p-4 space-y-1">
                         {navLinks.map((link) => (
                             <div key={link.name}>
