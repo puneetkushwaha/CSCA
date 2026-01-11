@@ -502,7 +502,7 @@ const Instructors = () => {
                   Simplify purchasing
                 </h2>
                 <p className="text-gray-400 mb-6">
-                  You can easily purchase CompTIA certifications and learning resources directly on the CompTIA Store.
+                  You can easily purchase CSCA certifications and learning resources directly on the CSCA Store.
                 </p>
                 <h3 className="text-2xl font-semibold mb-2 text-white">
                   Academic Pricing & Support:
@@ -567,7 +567,7 @@ const Instructors = () => {
               <div>
                 <h3 className="text-3xl font-bold mb-4">Certification Pathways</h3>
                 <p className="text-gray-400 mb-6">
-                  CompTIA's career pathways provide a comprehensive and structured approach to IT education, guiding students from foundational knowledge to advanced expertise. These pathways equip learners with the skills needed to excel in various technology fields, ensuring they are well-prepared for successful and rewarding careers in the tech industry.
+                  CSCA's career pathways provide a comprehensive and structured approach to IT education, guiding students from foundational knowledge to advanced expertise. These pathways equip learners with the skills needed to excel in various technology fields, ensuring they are well-prepared for successful and rewarding careers in the tech industry.
                 </p>
                 <button className="bg-[#d71f28] text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform">
                   View pathways
@@ -582,10 +582,10 @@ const Instructors = () => {
               </div>
             </section>
 
-            {/* ---------------- CompTIA’s Impact Section ---------------- */}
+            {/* ---------------- CSCA’s Impact Section ---------------- */}
             <section className="mb-24">
               <h2 className="text-4xl font-extrabold mb-12 text-center">
-                CompTIA’s impact in secondary education
+                CSCA’s impact in secondary education
               </h2>
 
               <div className="grid md:grid-cols-3 gap-8">
@@ -601,7 +601,7 @@ const Instructors = () => {
                       Cyber
                     </p>
                     <h3 className="text-xl font-bold text-white mb-2">
-                      Cybersecurity’s Maturity: CompTIA’s State of Cybersecurity 2024 Report
+                      Cybersecurity’s Maturity: CSCA’s State of Cybersecurity 2024 Report
                     </h3>
                     <p className="text-gray-400 text-sm">
                       Discover insights into cybersecurity readiness and trends shaping the future of IT defense across industries.
@@ -624,7 +624,7 @@ const Instructors = () => {
                       The Changing Landscape of Higher Education: Is College Still Worth It?
                     </h3>
                     <p className="text-gray-400 text-sm">
-                      Explore evolving academic models and how CompTIA programs adapt to modern student and employer needs.
+                      Explore evolving academic models and how CSCA programs adapt to modern student and employer needs.
                     </p>
                   </div>
                 </div>
@@ -641,7 +641,7 @@ const Instructors = () => {
                       Tech+
                     </p>
                     <h3 className="text-xl font-bold text-white mb-2">
-                      What is CompTIA Tech+?
+                      What is CSCA Tech+?
                     </h3>
                     <p className="text-gray-400 text-sm">
                       Learn how Tech+ builds foundational digital literacy and IT proficiency for tomorrow’s workforce.
@@ -664,7 +664,7 @@ const Instructors = () => {
                   Be the Instructor You Want to Be
                 </h2>
                 <p className="text-lg mb-8 text-white/90">
-                  See how CompTIA's resources support educators.
+                  See how CSCA's resources support educators.
                 </p>
                 <button className="bg-white text-[#9b1f4d] font-semibold px-8 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
                   Learn more about resources

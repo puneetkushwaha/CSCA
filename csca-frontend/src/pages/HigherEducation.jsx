@@ -665,7 +665,7 @@ const HigherEducation = () => {
                 <p className="text-gray-400 mb-6">
                   Discover Shakirra's journey from aspiring medical professional to
                   cybersecurity analyst, balancing motherhood, education, and a tech
-                  career with CompTIA certifications and WGU's flexible learning.
+                  career with CSCA certifications and WGU's flexible learning.
                 </p>
                 <button className="bg-[#d71f28] text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform">
                   Watch success story
@@ -683,7 +683,7 @@ const HigherEducation = () => {
             {/* ---------------- Proven Success Header ---------------- */}
             <section className="text-center mb-12">
               <h2 className="text-2xl md:text-4xl font-extrabold mb-3">
-                Proven success: CompTIA case studies
+                Proven success: CSCA case studies
               </h2>
             </section>
 
@@ -692,12 +692,12 @@ const HigherEducation = () => {
               {/* Case 1 */}
               <article className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-lg md:text-xl font-bold mb-3">
-                  Transforming careers in Romania: How CompTIA certifications open doors
+                  Transforming careers in Romania: How CSCA certifications open doors
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
                   Adrian Savu-Jivanov, of Savnet Training Center in Romania, has spent
                   nearly 20 years bridging academic skills with industry demands,
-                  leveraging CompTIA certifications like Linux+, Security+, and
+                  leveraging CSCA certifications like Linux+, Security+, and
                   Penetration Testing to create clear career paths and transform lives
                   across the EMEA region.
                 </p>
@@ -713,7 +713,7 @@ const HigherEducation = () => {
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
                   The College of DuPage equips IT students with industry-relevant skills
-                  and knowledge through passionate instruction and CompTIA certifications.
+                  and knowledge through passionate instruction and CSCA certifications.
                   This partnership helps students stay current with technology trends and launch successful careers in IT.
                 </p>
                 <button className="text-red-500 font-semibold hover:underline">
@@ -724,12 +724,12 @@ const HigherEducation = () => {
               {/* Case 3 */}
               <article className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-lg md:text-xl font-bold mb-3">
-                  Transforming lives through technology and CompTIA certifications
+                  Transforming lives through technology and CSCA certifications
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
-                  The Latin American Youth Center (LAYC) partnered with CompTIA to transform lives
+                  The Latin American Youth Center (LAYC) partnered with CSCA to transform lives
                   by equipping low-income students with affordable, high-quality technology training
-                  and certifications. Through CompTIA certifications like Tech+ and A+, students
+                  and certifications. Through CSCA certifications like Tech+ and A+, students
                   have secured meaningful employment, supported their families, and built
                   sustainable career pathways—breaking the cycle of poverty and empowering educators.
                 </p>
@@ -748,11 +748,11 @@ const HigherEducation = () => {
                 {/* Story 1 */}
                 <article className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:-translate-y-2 transition-all duration-300">
                   <h4 className="text-lg md:text-xl font-semibold mb-2">
-                    Workforce training, CompTIA certifications, and determination: Zachary Caudle’s path to systems administrator
+                    Workforce training, CSCA certifications, and determination: Zachary Caudle’s path to systems administrator
                   </h4>
                   <p className="text-gray-400 text-sm mb-4">
                     Zachary Caudle used Laurel Ridge Community College’s workforce training
-                    and a full CompTIA certification pathway to move from warehouse work
+                    and a full CSCA certification pathway to move from warehouse work
                     into a systems administrator role, earning statewide recognition for his achievement.
                   </p>
                   <button className="text-red-500 font-semibold hover:underline">

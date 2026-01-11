@@ -114,7 +114,7 @@ const ExploreTechCareers = () => {
                         <span className="h-px w-8 bg-red-600"></span>
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8">
-                        Explore <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Tech Careers</span>
+                    Choose Your Tech Stack.  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">We Build Your Security Mastery</span>
                     </h1>
                     <p className="text-xl text-gray-400 leading-relaxed">
                         Explore comprehensive information on tech careers spanning key fields like data, AI, networking, cloud, cybersecurity, and tech support.

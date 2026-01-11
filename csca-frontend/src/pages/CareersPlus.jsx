@@ -81,7 +81,7 @@ const CareersPlus = () => {
                         <span className="h-px w-8 bg-red-600"></span>
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8">
-                        Careers<span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 italic">+</span>
+                    More Than Careers <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 italic">— A Cybersecurity Ecosystem</span>
                     </h1>
                     <p className="text-xl text-gray-400 leading-relaxed mb-6">
                         Inspire the next first step in your career with these immersive role scenarios.

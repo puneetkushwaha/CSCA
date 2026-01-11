@@ -18,8 +18,8 @@ const CertificationDetail = () => {
         'cysa': {
             id: 'CS0-003',
             title: 'CySA+',
-            subtitle: 'CompTIA Cybersecurity Analyst',
-            description: "CompTIA Cybersecurity Analyst (CySA+) is the premier certification for cyber professionals tasked with incident detection, prevention, and response through continuous security monitoring. It validates a tech professional's expertise in incident response and vulnerability management processes, emphasizing the critical communication skills necessary for effective security analysis and compliance.",
+            subtitle: 'CSCA Cybersecurity Analyst',
+            description: "CSCA Cybersecurity Analyst (CySA+) is the premier certification for cyber professionals tasked with incident detection, prevention, and response through continuous security monitoring. It validates a tech professional's expertise in incident response and vulnerability management processes, emphasizing the critical communication skills necessary for effective security analysis and compliance.",
             price: '$392.00',
             currency: 'USD',
             level: 'Intermediate',
@@ -30,7 +30,7 @@ const CertificationDetail = () => {
             stats: {
                 students: '30,000+',
                 countries: 'Global',
-                community: 'CompTIA'
+                community: 'CSCA'
             },
             skills: [
                 'Security Operations', 'Threat Hunting', 'Vulnerability Management',

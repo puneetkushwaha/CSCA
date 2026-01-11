@@ -128,7 +128,7 @@ const Resources = () => {
           </p>
         </div>
 
-        {/* Featured Section - New CompTIA Experience */}
+        {/* Featured Section - New CSCA Experience */}
         <div className="mb-24 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
           <div className="rounded-[2.5rem] bg-gradient-to-r from-white/5 to-white/[0.02] border border-white/10 p-1">
             <div className="rounded-[2.4rem] bg-black/50 backdrop-blur-sm overflow-hidden relative">
@@ -137,10 +137,10 @@ const Resources = () => {
               <div className="grid md:grid-cols-2 gap-12 items-center p-8 md:p-16 relative z-10">
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">New CompTIA Experience</h2>
+                    <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">New CSCA Experience</h2>
                     <h3 className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 mb-6">Unlock your potential.</h3>
                     <p className="text-gray-400 text-lg leading-relaxed">
-                      Learn about CompTIA by watching a quick brand video, learn what's new on the website, and find frequently asked questions about our new experience.
+                      Learn about CSCA by watching a quick brand video, learn what's new on the website, and find frequently asked questions about our new experience.
                     </p>
                   </div>
                   <button className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest text-xs rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(220,38,38,0.6)] flex items-center gap-3 w-fit">

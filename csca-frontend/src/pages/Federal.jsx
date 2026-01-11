@@ -112,7 +112,7 @@ const Federal = () => {
                             </button>
                         </section>
 
-                        {/* Why Partner with CompTIA */}
+                        {/* Why Partner with CSCA */}
                         <section className="mb-24">
                             <h2 className="text-4xl md:text-5xl font-black mb-12 text-center">
                                 Why partner with <span className="text-red-500">CSCA</span>

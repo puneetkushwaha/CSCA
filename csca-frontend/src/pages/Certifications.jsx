@@ -45,7 +45,7 @@ const Certifications = () => {
                     </div>
 
                     <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-white mb-8">
-                        Discover Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Certifications</span>
+                    Certifications Designed for <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800"> the Real Cyber Battlefield</span>
                     </h1>
                     {activeCategory === 'Overview' ? null : (
                         <p className="text-lg text-gray-400 max-w-3xl mx-auto font-medium leading-relaxed animate-in fade-in slide-in-from-bottom-2">
@@ -153,7 +153,7 @@ const Certifications = () => {
                                                             <div>
                                                                 <div className="flex items-center gap-2 mb-1 opacity-50 text-[10px] font-bold uppercase tracking-widest">
                                                                     <span className="w-1.5 h-1.5 rounded-full bg-red-600"></span>
-                                                                    CompTIA
+                                                                    CSCA
                                                                 </div>
                                                                 <h3 className="text-3xl font-black text-white uppercase tracking-tighter group-hover:text-red-500 transition-colors duration-300">
                                                                     {cert.title}
@@ -211,7 +211,7 @@ const Certifications = () => {
                                                         <div>
                                                             <div className="flex items-center gap-2 mb-1 opacity-50 text-[10px] font-bold uppercase tracking-widest">
                                                                 <span className="w-1.5 h-1.5 rounded-full bg-red-600"></span>
-                                                                CompTIA
+                                                                CSCA
                                                             </div>
                                                             <h3 className="text-3xl font-black text-white uppercase tracking-tighter group-hover:text-red-500 transition-colors duration-300">
                                                                 {cert.title}

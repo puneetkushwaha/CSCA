@@ -71,7 +71,7 @@ const Exam = () => {
   <section className="space-y-12 text-center max-w-5xl mx-auto px-6">
     {/* Welcome Heading */}
     <h1 className="text-5xl font-bold">
-      <span className="text-white">Welcome to CompTIA Central, </span>
+      <span className="text-white">Welcome to CSCA Central, </span>
       <span className="text-red-500">Satyam!</span>
     </h1>
 
@@ -94,7 +94,7 @@ const Exam = () => {
       <p className="text-gray-400 text-sm mt-2">
         For store purchases, access keys are sent by email following order completion, and may also be retrieved from your store account's Order History. For instructor-led training, access keys are typically distributed by an instructor or institution admin.
         <br />
-        Not seeing a course? Find it by linking this CompTIA account to an unlinked account you own.{" "}
+        Not seeing a course? Find it by linking this CSCA account to an unlinked account you own.{" "}
         <span className="underline text-red-500 cursor-pointer">Link accounts here</span>.
       </p>
     </div>
@@ -270,7 +270,7 @@ const Exam = () => {
           Are you a US Citizen and at least 18 years of age?
         </p>
         <p className="text-gray-300">
-          Do you consent to CompTIA collecting your month and year of birth?
+          Do you consent to CSCA collecting your month and year of birth?
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -318,7 +318,7 @@ const Exam = () => {
         <div className="mt-6">
           <label className="flex items-center gap-2 text-gray-300 text-sm">
             <input type="checkbox" className="accent-red-600" />
-            I consent to receive SMS text messages from CompTIA and affiliates for updates, promotions, and important information.
+            I consent to receive SMS text messages from CSCA and affiliates for updates, promotions, and important information.
           </label>
         </div>
       </div>
@@ -420,8 +420,8 @@ const Exam = () => {
       <div className="mt-6">
         <label className="flex items-start gap-2 text-gray-300 text-sm">
           <input type="checkbox" className="accent-red-600 mt-1" />
-          I authorize CompTIA to release information pertaining to my credentials to third party organizations,
-          government entities, and academic institutions. I understand that in no event shall CompTIA, its officers,
+          I authorize CSCA to release information pertaining to my credentials to third party organizations,
+          government entities, and academic institutions. I understand that in no event shall CSCA, its officers,
           directors, or employees be liable for any special, indirect, incidental, or consequential damages or any
           damages resulting from the release of this information. I reserve the right to change my opt-in selections
           at any time.
@@ -449,7 +449,7 @@ const Exam = () => {
       </h2>
       <p className="text-gray-300 max-w-3xl mx-auto">
         Build the skills employers need and showcase your ability to excel in high-demand roles.
-        Explore industries and uncover the CompTIA certification or learning product that aligns
+        Explore industries and uncover the CSCA certification or learning product that aligns
         with your career aspirations.
       </p>
     </div>
@@ -540,52 +540,52 @@ const Exam = () => {
           {
             title: "Security+",
             subtitle: "Plus Security+ Certification",
-            desc: "CompTIA Security+ is the most trusted entry into cybersecurity, proving you have real-world, hands-on skills to protect networks, apps, and data.",
+            desc: "CSCA Security+ is the most trusted entry into cybersecurity, proving you have real-world, hands-on skills to protect networks, apps, and data.",
           },
           {
             title: "Network+",
             subtitle: "Plus Network+ Certification",
-            desc: "CompTIA Network+ gives you the confidence to connect, configure, and secure networks of any size, preparing you for roles in support, operations, and administration.",
+            desc: "CSCA Network+ gives you the confidence to connect, configure, and secure networks of any size, preparing you for roles in support, operations, and administration.",
           },
           {
             title: "A+",
             subtitle: "Plus A+ Certification",
-            desc: "CompTIA A+ is the starting point for your IT career, validating the core skills in hardware, software, and troubleshooting needed for support roles.",
+            desc: "CSCA A+ is the starting point for your IT career, validating the core skills in hardware, software, and troubleshooting needed for support roles.",
           },
           {
             title: "CySA+",
             subtitle: "Plus CySA+ Certification",
-            desc: "CompTIA CySA+ proves you can detect, analyze, and stop threats in real time—covering vulnerability management and incident response.",
+            desc: "CSCA CySA+ proves you can detect, analyze, and stop threats in real time—covering vulnerability management and incident response.",
           },
           {
             title: "Linux+",
             subtitle: "Plus Linux+ Certification",
-            desc: "CompTIA Linux+ validates your ability to manage, secure, and troubleshoot Linux systems across cloud and hybrid environments.",
+            desc: "CSCA Linux+ validates your ability to manage, secure, and troubleshoot Linux systems across cloud and hybrid environments.",
           },
           {
             title: "Data+",
             subtitle: "Plus Data+ Certification",
-            desc: "CompTIA Data+ shows you can translate data into insights, analyze and visualize information to drive data-driven decisions.",
+            desc: "CSCA Data+ shows you can translate data into insights, analyze and visualize information to drive data-driven decisions.",
           },
           {
             title: "Tech+",
             subtitle: "Plus Tech+ Certification",
-            desc: "CompTIA Tech+ helps you build foundational skills in computing, networks, software, and security before pursuing a specialized certification.",
+            desc: "CSCA Tech+ helps you build foundational skills in computing, networks, software, and security before pursuing a specialized certification.",
           },
           {
             title: "PenTest+",
             subtitle: "Plus PenTest+ Certification",
-            desc: "CompTIA PenTest+ proves you can think like an attacker to strengthen defenses, covering penetration testing for modern IT systems.",
+            desc: "CSCA PenTest+ proves you can think like an attacker to strengthen defenses, covering penetration testing for modern IT systems.",
           },
           {
             title: "Cloud+",
             subtitle: "Plus Cloud+ Certification",
-            desc: "CompTIA Cloud+ proves you can design, secure, and optimize multi-cloud environments across architectures and DevOps operations.",
+            desc: "CSCA Cloud+ proves you can design, secure, and optimize multi-cloud environments across architectures and DevOps operations.",
           },
           {
             title: "Project+",
             subtitle: "Plus Project+ Certification",
-            desc: "CompTIA Project+ proves you can manage IT projects from start to finish, validating skills in planning, leadership, and delivery.",
+            desc: "CSCA Project+ proves you can manage IT projects from start to finish, validating skills in planning, leadership, and delivery.",
           },
         ].map((cert) => (
           <div
@@ -611,7 +611,7 @@ const Exam = () => {
         {[
           "Shop",
           "About Us",
-          "Careers at CompTIA",
+          "Careers at CSCA",
           "Newsroom",
           "Share your Expertise",
           "Help",
@@ -639,7 +639,7 @@ const Exam = () => {
       </h2>
       <p className="text-gray-300 max-w-3xl mx-auto">
         Build the skills employers need and showcase your ability to excel in high-demand roles.
-        Explore industries and uncover the CompTIA certification or learning product that aligns
+        Explore industries and uncover the CSCA certification or learning product that aligns
         with your career aspirations.
       </p>
     </div>
@@ -730,52 +730,52 @@ const Exam = () => {
           {
             title: "Security+",
             subtitle: "Plus Security+ Certification",
-            desc: "CompTIA Security+ is the most trusted entry into cybersecurity, proving you have real-world, hands-on skills to protect networks, apps, and data.",
+            desc: "CSCA Security+ is the most trusted entry into cybersecurity, proving you have real-world, hands-on skills to protect networks, apps, and data.",
           },
           {
             title: "Network+",
             subtitle: "Plus Network+ Certification",
-            desc: "CompTIA Network+ gives you the confidence to connect, configure, and secure networks of any size, preparing you for roles in support, operations, and administration.",
+            desc: "CSCA Network+ gives you the confidence to connect, configure, and secure networks of any size, preparing you for roles in support, operations, and administration.",
           },
           {
             title: "A+",
             subtitle: "Plus A+ Certification",
-            desc: "CompTIA A+ is the starting point for your IT career, validating the core skills in hardware, software, and troubleshooting needed for support roles.",
+            desc: "CSCA A+ is the starting point for your IT career, validating the core skills in hardware, software, and troubleshooting needed for support roles.",
           },
           {
             title: "CySA+",
             subtitle: "Plus CySA+ Certification",
-            desc: "CompTIA CySA+ proves you can detect, analyze, and stop threats in real time—covering vulnerability management and incident response.",
+            desc: "CSCA CySA+ proves you can detect, analyze, and stop threats in real time—covering vulnerability management and incident response.",
           },
           {
             title: "Linux+",
             subtitle: "Plus Linux+ Certification",
-            desc: "CompTIA Linux+ validates your ability to manage, secure, and troubleshoot Linux systems across cloud and hybrid environments.",
+            desc: "CSCA Linux+ validates your ability to manage, secure, and troubleshoot Linux systems across cloud and hybrid environments.",
           },
           {
             title: "Data+",
             subtitle: "Plus Data+ Certification",
-            desc: "CompTIA Data+ shows you can translate data into insights, analyze and visualize information to drive data-driven decisions.",
+            desc: "CSCA Data+ shows you can translate data into insights, analyze and visualize information to drive data-driven decisions.",
           },
           {
             title: "Tech+",
             subtitle: "Plus Tech+ Certification",
-            desc: "CompTIA Tech+ helps you build foundational skills in computing, networks, software, and security before pursuing a specialized certification.",
+            desc: "CSCA Tech+ helps you build foundational skills in computing, networks, software, and security before pursuing a specialized certification.",
           },
           {
             title: "PenTest+",
             subtitle: "Plus PenTest+ Certification",
-            desc: "CompTIA PenTest+ proves you can think like an attacker to strengthen defenses, covering penetration testing for modern IT systems.",
+            desc: "CSCA PenTest+ proves you can think like an attacker to strengthen defenses, covering penetration testing for modern IT systems.",
           },
           {
             title: "Cloud+",
             subtitle: "Plus Cloud+ Certification",
-            desc: "CompTIA Cloud+ proves you can design, secure, and optimize multi-cloud environments across architectures and DevOps operations.",
+            desc: "CSCA Cloud+ proves you can design, secure, and optimize multi-cloud environments across architectures and DevOps operations.",
           },
           {
             title: "Project+",
             subtitle: "Plus Project+ Certification",
-            desc: "CompTIA Project+ proves you can manage IT projects from start to finish, validating skills in planning, leadership, and delivery.",
+            desc: "CSCA Project+ proves you can manage IT projects from start to finish, validating skills in planning, leadership, and delivery.",
           },
         ].map((cert) => (
           <div
@@ -801,7 +801,7 @@ const Exam = () => {
         {[
           "Shop",
           "About Us",
-          "Careers at CompTIA",
+          "Careers at CSCA",
           "Newsroom",
           "Share your Expertise",
           "Help",

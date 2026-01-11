@@ -266,10 +266,10 @@ const StateLocal = () => {
                                     <span className="text-red-500">OnDemand</span> learning
                                 </h2>
                                 <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                                    CompTIA’s OnDemand solutions offer government employees maximum schedule flexibility and a structured learning environment—featuring instructional video-based expert content, performance tracking, badging, and live chat support.
+                                    CSCA’s OnDemand solutions offer government employees maximum schedule flexibility and a structured learning environment—featuring instructional video-based expert content, performance tracking, badging, and live chat support.
                                 </p>
                                 <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                    OnDemand products available include CompTIA Tech+, A+, Network+, Security+, Linux+, CySA+, PenTest+ and Data+.
+                                    OnDemand products available include CSCA Tech+, A+, Network+, Security+, Linux+, CySA+, PenTest+ and Data+.
                                 </p>
                                 <button className="border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all hover:border-white">
                                     Check out a demo

@@ -37,7 +37,7 @@ const Enterprise = () => {
 
                     <h1 className="text-6xl md:text-7xl font-black uppercase tracking-tight mb-6">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
-                            ENTERPRISE
+                        Cyber Capability Building for Enterprises & Governments.
                         </span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
@@ -274,7 +274,7 @@ const Enterprise = () => {
                                     Our flexible, self-paced, OnDemand solutions provide employees with instructional video-based, structured learning, with expert content, performance tracking, badging, and live chat to help them upskill their tech teams.
                                 </p>
                                 <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                    OnDemand products available include CompTIA Tech+, A+, Network+, Security+, Linux+, CySA+, PenTest+ and Data+.
+                                    OnDemand products available include CSCA Tech+, A+, Network+, Security+, Linux+, CySA+, PenTest+ and Data+.
                                 </p>
                                 <button className="border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all hover:border-white">
                                     Check out a demo
@@ -287,7 +287,7 @@ const Enterprise = () => {
                             <div>
                                 <h2 className="text-4xl font-bold mb-6">Certifications</h2>
                                 <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                    For organizations focused on validating expertise, or for teams that already possess the necessary skills, certification vouchers provide a streamlined solution for employees to achieve globally recognized CompTIA certifications.
+                                    For organizations focused on validating expertise, or for teams that already possess the necessary skills, certification vouchers provide a streamlined solution for employees to achieve globally recognized CSCA certifications.
                                 </p>
                                 <button className="bg-[#d71f28] text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform">
                                     Buy today
@@ -330,7 +330,7 @@ const Enterprise = () => {
                     <>
                         <section className="text-center mb-24">
                             <h2 className="text-4xl md:text-5xl font-black mb-6">
-                                Explore CompTIA’s <br />
+                                Explore CSCA’s <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
                                     Career Pathways
                                 </span>

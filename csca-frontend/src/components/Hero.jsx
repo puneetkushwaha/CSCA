@@ -79,8 +79,8 @@ const Hero = () => {
                         <div className="w-full h-px bg-red-600/40 mb-6"></div>
 
                         <p className="text-sm md:text-base text-white/70 max-w-xl leading-relaxed">
-                            Trusted cybersecurity certifications and industry-aligned training, <br />
-                            backed by real-world assessments and hands-on labs.
+                        Trusted certifications for cybersecurity professionals, backed by industry experience & real-world assessment.<br/>
+                        Advance your career — from foundational to advanced security expertise.
                         </p>
                     </div>
 

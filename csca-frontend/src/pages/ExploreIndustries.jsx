@@ -112,7 +112,7 @@ const ExploreIndustries = () => {
 
                     {/* Header */}
                     <div className="mb-8">
-                        <div className="text-sm font-mono text-red-500 mb-4 tracking-widest uppercase">Explore Careers &gt; Industry Sectors</div>
+                        <div className="text-sm font-mono text-red-500 mb-4 tracking-widest uppercase"> Cybersecurity Isn’t One-Size-Fits-All &gt; Industries Need Specialists</div>
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-12">
                             Industry <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Sectors</span>
                         </h1>

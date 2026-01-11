@@ -40,108 +40,108 @@ const DigitalBadges = () => {
         {
             icon: <Gift className="w-6 h-6 text-red-500" />,
             title: "Special offers",
-            desc: "Receive special offers on additional training and certifications from CompTIA."
+            desc: "Receive special offers on additional training and certifications from CSCA."
         }
     ];
 
     const eligibleCerts = {
         core: {
-            title: "CompTIA core skills certifications",
+            title: "CSCA core skills certifications",
             items: [
-                "CompTIA Tech+",
-                "CompTIA A+ (GFL)",
-                "CompTIA A+ CE",
-                "CompTIA Network+ (GFL)",
-                "CompTIA Network+ CE",
-                "CompTIA Security+ (GFL)",
-                "CompTIA Security+ CE"
+                "CSCA Tech+",
+                "CSCA A+ (GFL)",
+                "CSCA A+ CE",
+                "CSCA Network+ (GFL)",
+                "CSCA Network+ CE",
+                "CSCA Security+ (GFL)",
+                "CSCA Security+ CE"
             ]
         },
         cyber: {
-            title: "CompTIA cybersecurity career pathway",
+            title: "CSCA cybersecurity career pathway",
             items: [
-                "CompTIA Cybersecurity Analyst (CySA+) CE",
-                "CompTIA PenTest+ CE",
-                "CompTIA SecurityX"
+                "CSCA Cybersecurity Analyst (CySA+) CE",
+                "CSCA PenTest+ CE",
+                "CSCA SecurityX"
             ]
         },
         infra: {
-            title: "CompTIA infrastructure career pathway",
+            title: "CSCA infrastructure career pathway",
             items: [
-                "CompTIA Linux+",
-                "CompTIA Linux+ pbLPI",
-                "CompTIA Server+",
-                "CompTIA Cloud+ CE",
+                "CSCA Linux+",
+                "CSCA Linux+ pbLPI",
+                "CSCA Server+",
+                "CSCA Cloud+ CE",
                 "CloudNetX"
             ]
         },
         data: {
-            title: "CompTIA data & analytics career pathway",
+            title: "CSCA data & analytics career pathway",
             items: [
-                "CompTIA Data+",
-                "CompTIA DataSys+",
-                "CompTIA DataX"
+                "CSCA Data+",
+                "CSCA DataSys+",
+                "CSCA DataX"
             ]
         },
         professional: {
-            title: "CompTIA additional professional certifications",
+            title: "CSCA additional professional certifications",
             items: [
-                "CompTIA Project+",
-                "CompTIA Cloud Essentials"
+                "CSCA Project+",
+                "CSCA Cloud Essentials"
             ]
         }
     };
 
     const stackableCerts = {
         cyber: {
-            title: "CompTIA cybersecurity career pathway",
+            title: "CSCA cybersecurity career pathway",
             items: [
-                { name: "CompTIA Secure Infrastructure Specialist (CSIS)", components: ["CompTIA A+ CE", "CompTIA Network+ CE", "CompTIA Security+ CE"] },
-                { name: "CompTIA Secure Cloud Professional (CSCP)", components: ["CompTIA Security+ CE", "CompTIA Cloud+ CE"] },
-                { name: "CompTIA Security Analytics Professional (CSAP)", components: ["CompTIA Security+ CE", "CompTIA Cybersecurity Analyst (CySA+) CE"] },
-                { name: "CompTIA Network Security Professional (CNSP)", components: ["CompTIA Security+ CE", "CompTIA Cybersecurity Analyst (CySA+) CE", "CompTIA PenTest+ CE"] },
-                { name: "CompTIA Network Vulnerability Assessment Professional (CNVP)", components: ["CompTIA Security+ CE", "CompTIA PenTest+ CE"] },
-                { name: "CompTIA Security Analytics Expert (CSAE)", components: ["CompTIA Security+ CE", "CompTIA Cybersecurity Analyst (CySA+) CE", "CompTIA SecurityX"] },
-                { name: "CompTIA Infrastructure Security Expert (CSIE)", components: ["CompTIA Security+ CE", "CompTIA Cybersecurity Analyst (CySA+) CE", "CompTIA PenTest+ CE", "CompTIA SecurityX"] }
+                { name: "CSCA Secure Infrastructure Specialist (CSIS)", components: ["CSCA A+ CE", "CSCA Network+ CE", "CSCA Security+ CE"] },
+                { name: "CSCA Secure Cloud Professional (CSCP)", components: ["CSCA Security+ CE", "CSCA Cloud+ CE"] },
+                { name: "CSCA Security Analytics Professional (CSAP)", components: ["CSCA Security+ CE", "CSCA Cybersecurity Analyst (CySA+) CE"] },
+                { name: "CSCA Network Security Professional (CNSP)", components: ["CSCA Security+ CE", "CSCA Cybersecurity Analyst (CySA+) CE", "CSCA PenTest+ CE"] },
+                { name: "CSCA Network Vulnerability Assessment Professional (CNVP)", components: ["CSCA Security+ CE", "CSCA PenTest+ CE"] },
+                { name: "CSCA Security Analytics Expert (CSAE)", components: ["CSCA Security+ CE", "CSCA Cybersecurity Analyst (CySA+) CE", "CSCA SecurityX"] },
+                { name: "CSCA Infrastructure Security Expert (CSIE)", components: ["CSCA Security+ CE", "CSCA Cybersecurity Analyst (CySA+) CE", "CSCA PenTest+ CE", "CSCA SecurityX"] }
             ]
         },
         infra: {
-            title: "CompTIA infrastructure career pathway",
+            title: "CSCA infrastructure career pathway",
             items: [
-                { name: "CompTIA IT Operations Specialist (CIOS)", components: ["CompTIA A+ CE", "CompTIA Network+ CE"] },
-                { name: "CompTIA Systems Support Specialist (CSSS)", components: ["CompTIA A+ CE", "CompTIA Linux+"] },
-                { name: "CompTIA Cloud Admin Professional (CCAP)", components: ["CompTIA Network+ CE", "CompTIA Cloud+ CE"] },
-                { name: "CompTIA Network Infrastructure Professional (CNIP)", components: ["CompTIA Network+ CE", "CompTIA Server+"] },
-                { name: "CompTIA Linux Network Professional (CLNP)", components: ["CompTIA Network+ CE", "CompTIA Linux+"] }
+                { name: "CSCA IT Operations Specialist (CIOS)", components: ["CSCA A+ CE", "CSCA Network+ CE"] },
+                { name: "CSCA Systems Support Specialist (CSSS)", components: ["CSCA A+ CE", "CSCA Linux+"] },
+                { name: "CSCA Cloud Admin Professional (CCAP)", components: ["CSCA Network+ CE", "CSCA Cloud+ CE"] },
+                { name: "CSCA Network Infrastructure Professional (CNIP)", components: ["CSCA Network+ CE", "CSCA Server+"] },
+                { name: "CSCA Linux Network Professional (CLNP)", components: ["CSCA Network+ CE", "CSCA Linux+"] }
             ]
         }
     };
 
     const notEligible = [
-        "CompTIA Certified Document Imaging Architect (CDIA+)",
-        "CompTIA Convergence+",
-        "CompTIA Convergence Technologies Professional (CTP+)",
-        "CompTIA Digital Home Technology Integrator (DHTI+)",
-        "CompTIA e-Biz+",
-        "CompTIA Green IT Specialist",
-        "CompTIA Healthcare IT Technician",
-        "CompTIA Home Technology Integrator (HTI+)",
-        "CompTIA i-Net+",
-        "CompTIA Instructor+",
-        "CompTIA IT for Sales Specialist",
-        "CompTIA Mobile App Security+ (Android)",
-        "CompTIA Mobile App Security+ (iOS)",
-        "CompTIA Mobility+",
-        "CompTIA Mobility+ CE",
-        "CompTIA Printing and Document Imaging (PDI+)",
-        "CompTIA Radio Frequency Identification (RFID+)",
-        "CompTIA Storage+ Powered by SNIA",
-        "CompTIA Storage+ Powered by SNIA CE",
-        "CompTIA Strata — Network Technology Engineer",
-        "CompTIA Strata — PC Functionality",
-        "CompTIA Strata — PC Hardware Technology Engineer",
-        "CompTIA Strata — PC Operating System Engineer",
-        "CompTIA Strata — PC Technology",
+        "CSCA Certified Document Imaging Architect (CDIA+)",
+        "CSCA Convergence+",
+        "CSCA Convergence Technologies Professional (CTP+)",
+        "CSCA Digital Home Technology Integrator (DHTI+)",
+        "CSCA e-Biz+",
+        "CSCA Green IT Specialist",
+        "CSCA Healthcare IT Technician",
+        "CSCA Home Technology Integrator (HTI+)",
+        "CSCA i-Net+",
+        "CSCA Instructor+",
+        "CSCA IT for Sales Specialist",
+        "CSCA Mobile App Security+ (Android)",
+        "CSCA Mobile App Security+ (iOS)",
+        "CSCA Mobility+",
+        "CSCA Mobility+ CE",
+        "CSCA Printing and Document Imaging (PDI+)",
+        "CSCA Radio Frequency Identification (RFID+)",
+        "CSCA Storage+ Powered by SNIA",
+        "CSCA Storage+ Powered by SNIA CE",
+        "CSCA Strata — Network Technology Engineer",
+        "CSCA Strata — PC Functionality",
+        "CSCA Strata — PC Hardware Technology Engineer",
+        "CSCA Strata — PC Operating System Engineer",
+        "CSCA Strata — PC Technology",
         "Any and all certifications created under the Examplify umbrella"
     ];
 
@@ -170,10 +170,10 @@ const DigitalBadges = () => {
                     </div>
 
                     <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-6">
-                        CompTIA <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Digital Badges</span>
+                        CSCA <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Digital Badges</span>
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto font-medium leading-relaxed">
-                        Digital badges are an exciting way to highlight your completed CompTIA certifications on your online profiles, resume, and more.
+                        Digital badges are an exciting way to highlight your completed CSCA certifications on your online profiles, resume, and more.
                     </p>
                 </div>
 
@@ -185,7 +185,7 @@ const DigitalBadges = () => {
                         <div className="relative z-10">
                             <h2 className="text-3xl font-black text-white mb-6">What is a digital badge?</h2>
                             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                                CompTIA has included digital badges as an additional way for you to share and validate your CompTIA certification achievements. A digital badge consists of an image and metadata that are uniquely linked to you. Together, they serve as a compelling digital showcase of your certification achievements. Clicking on your digital badge grants immediate access to validated information that features your knowledge and skills.
+                                CSCA has included digital badges as an additional way for you to share and validate your CSCA certification achievements. A digital badge consists of an image and metadata that are uniquely linked to you. Together, they serve as a compelling digital showcase of your certification achievements. Clicking on your digital badge grants immediate access to validated information that features your knowledge and skills.
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -206,7 +206,7 @@ const DigitalBadges = () => {
                     <div>
                         <h2 className="text-3xl font-black text-white mb-6">How to claim your digital badge</h2>
                         <p className="text-gray-400 mb-8">
-                            When you earn your CompTIA certification, you’ll receive an email letting you know that you can claim your digital badge at Credly’s website. Claiming your digital badge is quick and easy when you follow these steps:
+                            When you earn your CSCA certification, you’ll receive an email letting you know that you can claim your digital badge at Credly’s website. Claiming your digital badge is quick and easy when you follow these steps:
                         </p>
 
                         <div className="space-y-6">
@@ -244,7 +244,7 @@ const DigitalBadges = () => {
                     <div className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 relative">
                         <h3 className="text-xl font-bold text-white mb-4">Am I eligible?</h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                            Digital badges are available for active CompTIA certifications and stackable certifications that have not been retired. These include both Good-for-Life (GFL) and Continuing Education (CE) certifications.
+                            Digital badges are available for active CSCA certifications and stackable certifications that have not been retired. These include both Good-for-Life (GFL) and Continuing Education (CE) certifications.
                         </p>
                         <Link to="/faq">
                             <button className="w-full py-3 border border-white/10 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-white text-gray-300 hover:text-black transition-all">
@@ -289,7 +289,7 @@ const DigitalBadges = () => {
                 {/* Stackable Certifications */}
                 <div className="mb-24 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
                     <h2 className="text-3xl font-black text-white mb-10 text-center">Stackable Certifications</h2>
-                    <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">Stackable certifications consist of multiple, related CompTIA certifications you’ve earned.</p>
+                    <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">Stackable certifications consist of multiple, related CSCA certifications you’ve earned.</p>
 
                     <div className="space-y-8">
                         {Object.entries(stackableCerts).map(([key, category]) => (
@@ -318,7 +318,7 @@ const DigitalBadges = () => {
                 <div className="bg-red-900/10 border border-red-500/20 rounded-[2rem] p-8 md:p-12 mb-24 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400">
                     <h2 className="text-2xl font-black text-white mb-4">Certifications NOT eligible for digital badges</h2>
                     <p className="text-gray-400 mb-8 max-w-3xl">
-                        CompTIA certifications that have been retired or have been removed from the market otherwise are not eligible for digital badges. If you hold one of these certifications, it may still be Good for Life (GFL) even though it is not eligible for a digital badge.
+                        CSCA certifications that have been retired or have been removed from the market otherwise are not eligible for digital badges. If you hold one of these certifications, it may still be Good for Life (GFL) even though it is not eligible for a digital badge.
                     </p>
 
                     <div className="h-64 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">

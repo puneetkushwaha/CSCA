@@ -10,11 +10,11 @@ const ExploreCareers = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
                 <div className="max-w-3xl">
                     <h1 className="text-5xl md:text-6xl font-black uppercase tracking-tight mb-6">
-                        Explore <span className="text-red-600">Careers</span>
+                        Build a Cyber Career That Actually Pays <span className="text-red-600"> — Not Just a Certificate</span>
                     </h1>
                     <p className="text-xl text-gray-400 leading-relaxed">
-                        Inspire the first step in your career. Explore tech careers or industry sectors to learn about earning potential, hiring markets, top certifications, skill requirements, and more.
-                    </p>
+                        CSCA maps real-world cybersecurity roles across Red Team, Blue Team, Cloud, GRC, AI
+                        Security, and Digital Forensics, aligned with real industry demand.</p>
                 </div>
             </div>
 
@@ -31,8 +31,10 @@ const ExploreCareers = () => {
                         <div className="p-8">
                             <h3 className="text-2xl font-bold mb-3 group-hover:text-red-500 transition-colors">Explore tech careers</h3>
                             <p className="text-gray-400 mb-6 text-sm leading-relaxed min-h-[80px]">
-                                There’s a tech job role for you, no matter your skill set, personality, ambition, or even tech know-how.
-                            </p>
+                            Red Team Operator | SOC Analyst | Cloud Security Engineer | Threat Intelligence
+                            Analyst | Cyber Law & Compliance Specialist | AI Security Engineer | Security Architect | CISO
+                            Track
+</p>
                             <Link to="/explore-tech-careers" className="inline-flex items-center text-sm font-bold text-white uppercase tracking-wider group-hover:text-red-500 transition-colors">
                                 Learn more <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                             </Link>
@@ -87,7 +89,7 @@ const ExploreCareers = () => {
                         </div>
                         <h4 className="text-lg font-bold text-red-500 uppercase tracking-widest mb-4">Research highlight</h4>
                         <p className="text-xl font-medium text-white mb-6 leading-relaxed relative z-10">
-                            CompTIA’s Tech Jobs Report provides a monthly snapshot of information technology (IT) employment trending at the occupation and industry levels.
+                            CSCA’s Tech Jobs Report provides a monthly snapshot of information technology (IT) employment trending at the occupation and industry levels.
                         </p>
                         <Link to="/resources/research" className="inline-flex items-center px-6 py-3 bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-gray-200 transition-colors rounded-lg">
                             Learn more
@@ -101,7 +103,8 @@ const ExploreCareers = () => {
                         </div>
                         <h4 className="text-lg font-bold text-red-500 uppercase tracking-widest mb-4">Explore our blogs</h4>
                         <p className="text-xl font-medium text-white mb-6 leading-relaxed relative z-10">
-                            CompTIA’s Career Pathways provide a structured and comprehensive roadmap for learners to excel in high-demand IT careers.
+                            CSCA’s Career Pathways provide a structured and comprehensive roadmap for learners to excel in high-demand IT careers.
+                            
                         </p>
                         <Link to="/resources/blog" className="inline-flex items-center px-6 py-3 bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-gray-200 transition-colors rounded-lg">
                             Learn more

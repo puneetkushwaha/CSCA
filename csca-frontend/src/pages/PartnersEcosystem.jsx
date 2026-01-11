@@ -78,11 +78,11 @@ const PartnersEcosystem = () => {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-black mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-600">
-                Partners & Ecosystem
-              </span>
-            </h1>
+          <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-white mb-8">
+          Partner With CSCA
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
+                    Build the Cyber Nation Together</span>
+          </h1>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
               Collaborating with industry leaders to define the future of cyber
               defense and IT education.
@@ -533,7 +533,7 @@ const PartnersEcosystem = () => {
                 {/* Instructor Network Section */}
                 <section className="bg-white/5 border border-white/10 rounded-2xl p-10 text-center">
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/7a/CompTIA_logo.svg"
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/7a/CSCA_logo.svg"
                     alt="CSCA Instructor Network (CIN) Logo"
                     className="w-40 mx-auto mb-6"
                   />
